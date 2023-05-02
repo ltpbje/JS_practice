@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['张飞', '赵云', '黄忠', '吕布', '马超', '刘备', '曹操'];
+        let random = Math.floor(Math.random() * (arr.length));
+        document.write(arr[random]);
+        // splice(起始位置(下标),删除几个元素)
+        arr.splice(random, 1);
+        console.log(arr);
+    </script>
+</body>
+
+</html>

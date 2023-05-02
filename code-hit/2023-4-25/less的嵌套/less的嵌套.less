@@ -1,0 +1,33 @@
+// 嵌套
+.father {
+    height: 200px;
+    width: 200px;
+    background-color: pink;
+
+    .son {
+        height: 100px;
+        width: 100px;
+        background-color: purple;
+    }
+}
+
+// 伪元素的写法
+.box {
+    height: 200px;
+    width: 200px;
+    background-color: pink;
+    margin-top: 10px;
+    transition: all 1s;
+
+    &::before {
+        content: '';
+        display: block;
+        height: 100px;
+        width: 100px;
+        background-color: purple;
+    }
+
+    &:hover {
+        background-color: red;
+    }
+}

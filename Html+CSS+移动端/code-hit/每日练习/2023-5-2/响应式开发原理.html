@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        /* 手机超小屏幕 小于768 宽度设置为100% */
+        @media screen and (max-width:767px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        /* 平板 小屏幕大于等于768 设置宽度为750px */
+        @media screen and (min-width:768px) {
+            .container {
+                width: 750px;
+            }
+        }
+
+        /* 中等屏幕大于等于992px 设置宽度为970px   */
+        @media screen and (min-width:992px) {
+            .container {
+                width: 970px;
+            }
+        }
+
+        /* 中等屏幕大于等于1200px 设置宽度为1170px   */
+        @media screen and (min-width:1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+</body>
+
+</html>

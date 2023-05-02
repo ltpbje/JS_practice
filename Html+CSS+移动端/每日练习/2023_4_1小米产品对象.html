@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let goods = {
+            goodsName: '小米10 青春版',
+            num: '100012816024',
+            weight: '0.55Kg',
+            address: '中国大陆',
+            action: function () {
+                console.log('暖手宝');
+            }
+        };
+        console.log(goods);
+        goods.action();
+        console.log(goods['goodsName']);
+        console.log(goods['num']);
+        console.log(goods['weight']);
+        console.log(goods['address']);
+    </script>
+</body>
+
+</html>

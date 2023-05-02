@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(500px, 0);
+            }
+        }
+
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            animation: move 2s linear 0.1s infinite alternate forwards;
+            /* 名字 持续时间 运动曲线 开始时间 播放次数 是否反方向 规定动画结束后的状态*/
+        }
+
+        div:hover {
+            /* 规定动画是否运行或暂停  paused */
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

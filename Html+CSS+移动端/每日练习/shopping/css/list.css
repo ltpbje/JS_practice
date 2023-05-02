@@ -1,0 +1,190 @@
+.sk {
+    position: absolute;
+    display: block;
+    right: -84px;
+    top: 18px;
+    width: 71px;
+    height: 32px;
+    padding-left: 13px;
+    border-left: 1px solid #b1191a;
+}
+
+.nav {
+    height: 48px;
+}
+
+.nav .sk_list {
+    height: 48px;
+    float: left;
+}
+
+a {
+    color: #000;
+}
+
+.nav .sk_list ul li a {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nav .sk_list ul li {
+    float: left;
+    margin: 0 28px;
+    line-height: 48px;
+}
+
+.nav .sk_con a {
+    font-size: 14px;
+}
+
+.nav .sk_con {
+    float: left;
+}
+
+.nav .sk_con ul li {
+    float: left;
+    line-height: 48px;
+    margin: 0 20px;
+}
+
+.nav .sk_con ul li:nth-child(2) a {
+    color: #b1191a;
+}
+
+.nav .sk_con ul li:last-child::after {
+    font-family: 'icomoon';
+    content: '\e900';
+}
+
+/* 内容 */
+.sk_container ul li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 35px;
+    border: 1px solid transparent;
+}
+
+.sk_container ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+
+.sk_container ul li:hover {
+    border: 1px solid #e12228;
+}
+
+.sk_container .sk_bd {
+    margin-top: 26px;
+}
+
+.sk_container .sk_bd img {
+    margin: 0 67px;
+}
+
+.sk_container ul li {
+    height: 460px;
+    width: 291px;
+    padding-top: 22px;
+    position: relative;
+}
+
+.sk_container .sk_bd a {
+    display: block;
+    height: 409px;
+    width: 290px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+}
+
+.sk_container .sk_bd a h4 {
+    display: block;
+    height: 35px;
+    width: 265px;
+    margin-top: 26px;
+}
+
+.sk_container .sk_bd .price {
+    width: 200px;
+    height: 37px;
+    overflow: hidden;
+}
+
+.sk_container .sk_bd .new_price {
+    float: left;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #e60012;
+}
+
+.sk_container .sk_bd .new_price i {
+    font-size: 14px;
+}
+
+.sk_container .sk_bd .last_price {
+    float: left;
+    font-size: 14px;
+    color: #a4a4a4;
+}
+
+.sk_container .sk_bd .last_price {
+    margin-top: 19px;
+    text-decoration: line-through;
+}
+
+/* 销售情况 */
+.sk_container .progress {
+    /* float: left; */
+    position: relative;
+    height: 20px;
+    margin-top: 12px;
+}
+
+.sk_container .progress .lf {
+    position: absolute;
+    width: 60px;
+    height: 14px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.sk_container .progress .rf {
+    position: absolute;
+    right: 0;
+    top: -6px;
+}
+
+.sk_container .progress .rf i {
+    color: #e12228;
+    font-size: 16px;
+}
+
+.sk_container .progress .rf {
+    font-size: 14px;
+}
+
+.sk_container .sk_bd .bar {
+    position: absolute;
+    left: 60px;
+    height: 13px;
+    width: 133px;
+    border: 1px solid #e12228;
+    border-radius: 6px 6px 6px 6px;
+}
+
+.sk_container .sk_bd .bar_in {
+    position: absolute;
+    height: 12px;
+    width: 100px;
+    background-color: #e12228;
+    border-radius: 6px 0 0 6px;
+}
+
+.sk_container .buy_button button {
+    position: absolute;
+    top: 410px;
+    height: 50px;
+    width: 290px;
+    color: #fff;
+    background-color: #b1191a;
+}

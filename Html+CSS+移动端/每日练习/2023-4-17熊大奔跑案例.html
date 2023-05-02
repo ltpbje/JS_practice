@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: skyblue;
+        }
+
+        div {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            height: 100px;
+            background: url(images/bear.png) no-repeat;
+            /* 一个元素可以使用两个动画 */
+            animation: bear 1s steps(8) infinite, move 3s linear forwards;
+        }
+
+        @keyframes bear {
+            0% {}
+
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes move {
+            0% {}
+
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

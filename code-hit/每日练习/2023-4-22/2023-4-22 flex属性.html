@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            height: 300px;
+            width: 700px;
+            background-color: pink;
+        }
+
+        div p {
+            /* 剩余的份数 */
+            flex: 1;
+            background-color: aqua;
+        }
+
+        div p:nth-child(2) {
+            /* 数值越小越靠前 */
+            order: -1;
+            flex: 2;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+</body>
+
+</html>

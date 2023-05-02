@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配合字体图标</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?rp62o4');
+            src: url('fonts/icomoon.eot?rp62o4#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?rp62o4') format('truetype'),
+                url('fonts/icomoon.woff?rp62o4') format('woff'),
+                url('fonts/icomoon.svg?rp62o4#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        div {
+            position: relative;
+            height: 30px;
+            width: 200px;
+            border: 1px solid red;
+        }
+
+        div::before {
+            font-family: 'icomoon';
+            content: '\ea43';
+            position: absolute;
+            right: 10px;
+            top: 7px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

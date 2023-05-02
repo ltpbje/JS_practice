@@ -1,0 +1,72 @@
+@media screen and (min-width:750px) {
+  html {
+    font-size: 75px !important;
+  }
+}
+
+input {
+  outline: none;
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  min-width: 320px;
+  max-width: 750px;
+  height: 400px;
+  width: 10rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: Arial, Helvetica;
+  background: #F2F2F2;
+}
+
+.search-content {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 1.1733rem;
+  width: 10rem;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  margin: 0 auto;
+
+  background-color: #FFc001;
+
+}
+
+.search-content .classify {
+  height: .9332rem;
+  width: .5867rem;
+  background: url(../images/classify.png) no-repeat;
+  background-size: .5867rem .9332rem;
+  margin: .2rem 0 0 .2667rem;
+}
+
+.search-content .search {
+  flex: 1;
+
+}
+
+.search-content .search input {
+  width: 100%;
+  height: .88rem;
+  border-radius: .44rem;
+  padding-left: .3333rem;
+  margin-top: .1333rem;
+  font-size: .3333rem;
+  background-color: #fff2cc;
+}
+
+.search-content .login {
+  width: 1rem;
+  height: .9332rem;
+  margin-top: .1333rem;
+  text-align: center;
+  line-height: .9332rem;
+  color: #fff;
+  font-size: .3333rem;
+}

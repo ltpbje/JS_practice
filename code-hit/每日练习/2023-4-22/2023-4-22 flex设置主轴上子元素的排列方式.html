@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            display: flex;
+            /* 规定子元素在主轴上的排列方式 */
+            /* 从左到右默认的排列方式 */
+            /* justify-content: start; */
+            /* 从右到左的排列方式 */
+            /* justify-content: end; */
+            /* 子元素延主轴居中的排列方式 */
+            /* justify-content: center; */
+            /* 平分剩余空间 */
+            /* justify-content: space-around; */
+            /* 先两边贴边再平分剩余空间 */
+            /* justify-content: space-between; */
+            height: 400px;
+            width: 500px;
+            background-color: pink;
+        }
+
+        div span {
+            height: 50px;
+            width: 100px;
+            background-color: purple;
+            /* 1 */
+        }
+    </style>
+</head>
+
+<body>
+    <div><span>1</span><span>2</span><span>3</span><span>4</span></div>
+</body>
+
+</html>

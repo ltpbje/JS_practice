@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            position: relative;
+            list-style: none;
+        }
+
+        ul {
+            display: block;
+            height: 470px;
+            width: 300px;
+        }
+
+        .title h5 {
+            display: block;
+            width: 290px;
+            font-size: 14px;
+            font-weight: normal;
+            color: #666;
+            line-height: 25px;
+            padding: 10px;
+        }
+
+        .price {
+            padding-left: 10px;
+        }
+
+        .price em {
+            font-size: 22px;
+            color: #e60012;
+            font-style: normal;
+        }
+
+        .price del {
+            font-size: 14px;
+            font-weight: 700;
+            color: #a4a4a4;
+        }
+
+        .bar {
+            display: inline-block;
+            width: 130px;
+            height: 10px;
+            border: 1px solid #b1191a;
+            vertical-align: middle;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .progress {
+            padding: 0 10px;
+            font-size: 12px;
+            color: #b1191a;
+        }
+
+        .progress i {
+            font-style: normal;
+            color: #666;
+        }
+
+        .bar_in {
+            width: 87%;
+            height: 10px;
+            background-color: #f24349;
+        }
+
+        .buy {
+            /* position: absolute; */
+            /* bottom: 0px; */
+            display: block;
+            margin-top: 2px;
+            text-decoration: none;
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+            background-color: #b1191a;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="goods">
+            <img src="./images/mobile.jpg" alt="">
+        </li>
+        <li class="title">
+            <h5>Apple苹果iPhone 6s Plus（A1699）32G 金色 移动联通电信4G手机</h5>
+        </li>
+        <li>
+            <p class="price">
+                <em>￥6088</em>
+                <del>￥6988</del>
+            </p>
+        </li>
+        <li>
+            <div class="progress">
+                <i>已售</i><em>87%</em>
+                <div class="bar">
+                    <div class="bar_in"></div>
+                </div>
+                <i>剩余</i>29<i>件</i>
+            </div>
+        </li>
+        <li><a href="#" class="buy">
+                立即抢购
+            </a></li>
+    </ul>
+</body>
+
+</html>

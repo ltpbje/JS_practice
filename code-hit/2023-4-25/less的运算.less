@@ -1,0 +1,23 @@
+@border: 3px;
+@baseFont: 50px;
+
+html {
+    font-size: 200px;
+}
+
+div {
+    // 加法的实现
+    height: 200px + 100;
+    // 乘法的实现
+    width: (200px + 0) * (3 / 2);
+    background-color: pink;
+    border: @border solid #000;
+}
+
+img {
+    // 运算符两边单位不同时会使用第一个元素的单位
+    // 现在的less语法中，除法需要加()或.，比如： 但不推荐.的写法，会提示波浪线错误，更推荐小括号()
+    display: block;
+    height: (50rem / @baseFont);
+    width: 50rem ./ @baseFont;
+}

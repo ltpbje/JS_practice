@@ -1,0 +1,342 @@
+body {
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;
+    height: 1000px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+.search_index {
+    display: flex;
+    position: fixed;
+    top: 0;
+    height: 44px;
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    background-color: #F6F6F6;
+}
+
+.search {
+    position: relative;
+    flex: 1;
+    height: 26px;
+    box-shadow: 0 0 1px 2px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    padding-left: 27px;
+    margin: 8px 19px 0 19px;
+    line-height: 26px;
+    color: #666;
+}
+
+.search::before {
+    position: absolute;
+    left: 2px;
+    top: 5px;
+    content: '';
+    display: block;
+    height: 15px;
+    width: 15px;
+    background: url(../images/sprite.png) -58px -279px;
+    background-size: 104px 327px;
+}
+
+.user {
+    height: 44px;
+    width: 44px;
+    text-align: center;
+    color: #2eaae0;
+}
+
+.user::before {
+    content: '';
+    display: block;
+    height: 23px;
+    width: 23px;
+    margin: 0 auto;
+    background: url(../images/sprite.png) no-repeat -59px -193px;
+    background-size: 104px 327px;
+}
+
+/* 焦点图 */
+.focus {
+    margin-top: 50px;
+}
+
+.focus img {
+    width: 100%;
+}
+
+/* 局部导航栏 */
+.local_nav {
+    display: flex;
+    height: 64px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 0 3px;
+}
+
+.local_nav li {
+    flex: 1;
+    /* background-color: pink; */
+}
+
+.local_nav li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.local_nav li div[class^="local_nav_icon"] {
+    height: 32px;
+    width: 32px;
+    background: url(../images/localnav_bg.png) no-repeat 0 0;
+    background-size: 32px 160px;
+}
+
+.local_nav li a .local_nav_icon2 {
+    background-position: 0 -32px;
+}
+
+.local_nav li a .local_nav_icon3 {
+    background-position: 0 -64px;
+}
+
+.local_nav li a .local_nav_icon4 {
+    background-position: 0 -96px;
+}
+
+.local_nav li a .local_nav_icon5 {
+    background-position: 0 -128px;
+}
+
+/* 主导航栏 */
+nav .nav_common {
+    display: flex;
+    height: 88px;
+    /* color: #fff; */
+
+    margin-bottom: 4px;
+
+}
+
+nav .nav_common:first-child {
+    border-radius: 12px 12px 0 0;
+    background: -webkit-linear-gradient(left, rgb(250, 91, 85), rgb(250, 153, 77));
+}
+
+nav .nav_common:nth-child(2) {
+    background: -webkit-linear-gradient(left, #4b90ed, #52bbec);
+}
+
+nav .nav_common:nth-child(3) {
+    border-radius: 0 0 12px 12px;
+    background: -webkit-linear-gradient(left, #34c2a8, #6bd459);
+}
+
+.nav_common .nav_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+.nav_common .nav_item:nth-child(2) {
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+.nav_common .nav_item a {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    line-height: 44px;
+}
+
+.nav_common .nav_item:first-child a {
+    background: url(../images/hotel.png) no-repeat center bottom;
+    background-size: 121px 46px;
+    padding-top: 5px;
+}
+
+.nav_common .nav_item:nth-child(n+2) a:first-child {
+    border-bottom: 2px solid #fff;
+}
+
+/* 测导航栏 */
+.subnav_entry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 116px;
+    background-color: #fff;
+}
+
+.subnav_entry li {
+    display: flex;
+}
+
+.subnav_entry li {
+    flex: 20%;
+    height: 53px;
+    padding-top: 9px;
+    justify-content: center;
+    /* background-color: pink; */
+}
+
+.subnav_entry li a {
+    display: flex;
+    height: 53px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subnav_entry li .subnav_entry_icon {
+    height: 28px;
+    width: 28px;
+    background: url(../images/subnav-bg.png) no-repeat;
+    background-size: 28px auto;
+}
+
+/* 销售模块 */
+.sales_box {
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.sales_box .sale_hd {
+    position: relative;
+    height: 53px;
+    /* line-height: 44px; */
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #bbb;
+}
+
+.sales_box .sale_hd h2 {
+    text-indent: -999999px;
+    overflow: hidden;
+}
+
+.sales_box .sale_hd h2::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 17px;
+    display: block;
+    height: 15px;
+    width: 79px;
+    background: url(../images/hot.png) no-repeat 0 -19px;
+    background-size: 79px 57px;
+}
+
+.sales_box .sale_hd a {
+    position: absolute;
+    display: block;
+    right: 4px;
+    top: 13px;
+    background: -webkit-linear-gradient(left, #ff5272, #ff6bc4);
+    border-radius: 13px;
+    color: #fff;
+
+    padding: 3px 20px 3px 10px;
+}
+
+.sales_box .sale_hd a::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    height: 10px;
+    width: 10px;
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+/* sale_bd */
+.sale_bd {
+    /* display: flex; */
+}
+
+.sale_bd .row {
+    display: flex;
+}
+
+.sale_bd .row:nth-child(-n+2) {
+    border-bottom: 1px solid #eee;
+}
+
+.sale_bd .row a {
+    flex: 1;
+}
+
+.sale_bd .row a:first-child {
+    border-right: 1px solid #eee;
+}
+
+.sale_bd .row a img {
+    width: 100%;
+}
+
+/* tabbar 标签栏 */
+.tabbar {
+    display: flex;
+    height: 55px;
+    background-color: #fff;
+}
+
+.tabbar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabbar a span {
+    align-items: center;
+}
+
+.tabbar a span:first-child {
+    /* margin-top: 10px; */
+    height: 35px;
+    width: 35px;
+    background-size: 48px 240px;
+}
+
+.tabbar .icon-home {
+
+    background: url(../images/tabbar.png) no-repeat -9px -7px;
+}
+
+.tabbar .icon-community {
+    background: url(../images/tabbar.png) no-repeat -6px -57px;
+}
+
+.tabbar .icon-message {
+    background: url(../images/tabbar.png) no-repeat -6px -105px;
+}
+
+.tabbar .icon-myctrip {
+    background: url(../images/tabbar.png) no-repeat -9px -152px;
+}

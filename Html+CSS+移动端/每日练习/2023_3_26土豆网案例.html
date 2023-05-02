@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tudou {
+            position: relative;
+            height: 400px;
+            width: 500px;
+            margin: 20px auto;
+            background-color: pink;
+        }
+
+        .tudou img {
+            /* position: absolute; */
+            height: 100%;
+            width: 100%;
+        }
+
+        .tudou .mask {
+            position: absolute;
+            display: none;
+            height: 400px;
+            width: 500px;
+            background: rgba(0, 0, 0, 0.6) url(./button.png) no-repeat center;
+        }
+
+        .tudou:hover .mask {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <div class="mask"></div>
+        <img src="./taobao.png" alt="">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        div {
+            height: 70px;
+            width: 0px;
+            font-size: 70px;
+            overflow: hidden;
+            line-height: 70px;
+            animation-name: w;
+            /* 强制一行显示 */
+            white-space: nowrap;
+            animation: w 2s steps(10) infinite forwards;
+            background-color: pink;
+        }
+
+        @keyframes w {
+            0% {}
+
+            100% {
+                width: 700px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>冰海战记我在这里等你
+    </div>
+</body>
+
+</html>

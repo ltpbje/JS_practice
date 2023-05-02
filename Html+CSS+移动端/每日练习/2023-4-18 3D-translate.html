@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 3D转换配合透视才能生效-perspective  透视需要加在需要3D转换的元素的父盒子上*/
+            perspective: 200px;
+        }
+
+        div {
+            height: 200px;
+            width: 200px;
+            margin: 40px auto;
+            background-color: pink;
+            /*3D转换简写 translate3d  */
+            transform: translateZ(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

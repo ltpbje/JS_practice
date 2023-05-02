@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            height: 400px;
+            width: 400px;
+            background-color:pink;
+        }
+        .father::before{
+            content: '老鼠';
+            height: 100px;
+            width: 100px;
+            background-color:green;
+            display: inline-block;
+        }
+        .father::after{
+            content: '大米';
+        }
+    </style>
+</head>
+<body>
+    <div class="father">爱</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+
+
+        div::after {
+            display: block;
+            content: '黑马';
+            height: 200px;
+            width: 200px;
+            transform-origin: left bottom;
+            transform: rotate(180deg);
+            transition: all 1s;
+            background-color: pink;
+        }
+
+        div:hover::after {
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 获取第一个div元素
+        // const div = document.querySelector('div');
+        // console.log(div);
+        // 获取所有的div元素
+        // const div = document.querySelectorAll('div');
+        // console.log(div);
+        // 获取 ul 里的第一个li
+        // const li = document.querySelector('ul li:first-child');
+        // console.log(li);
+        // 获取ul 里所有的 li
+        // const lis = document.querySelectorAll('ul li');
+        // console.log(lis);
+        // 获取到的数组是伪数组
+        const lis = document.querySelectorAll('ul li');
+        // 遍历每一个元素
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }  
+    </script>
+</body>
+
+</html>

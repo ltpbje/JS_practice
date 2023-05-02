@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+        }
+
+        .price {
+            height: 30px;
+            width: 200px;
+            margin: 200px auto;
+            text-align: center;
+            line-height: 34px;
+            border: 1px solid red;
+        }
+
+        .miaosha {
+            position: relative;
+            float: left;
+            height: 30px;
+            width: 130px;
+            background-color: red;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .price .miaosha i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            /* bottom: 0; */
+            height: 0;
+            width: 0;
+            /* CSS三角的妙用 */
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 31px 17px 0 0;
+        }
+
+        .price .origin {
+            font-size: 10px;
+            font-weight: 700;
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="price">
+        <span class="miaosha">¥1999
+            <i></i>
+        </span>
+        <span class="origin">¥5999</span>
+    </div>
+</body>
+
+</html>

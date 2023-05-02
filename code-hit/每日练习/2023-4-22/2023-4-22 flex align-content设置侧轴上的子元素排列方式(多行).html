@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        div {
+            display: flex;
+            height: 400px;
+            width: 500px;
+            flex-wrap: wrap;
+            /* 从头部开始排列 */
+            /* align-content: flex-start; */
+            /* 从尾部开始排列 */
+            /* align-content: flex-end; */
+            /* 在侧轴中间显示 */
+            /* align-content: center; */
+            /* 子元素平分侧轴 */
+            /* align-content: space-around; */
+            /* 先子项分布在侧轴两头 再平分侧轴剩余空间 */
+            /* align-content: space-between; */
+            /* 子项元素平分父元素高度 */
+            align-content: stretch;
+            background-color: pink;
+        }
+
+        div span {
+            /* height: 50px; */
+            width: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>11</span>
+        <span>12</span>
+        <span>13</span>
+        <span>14</span>
+        <span>15</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+.father {
+  height: 200px;
+  width: 200px;
+  background-color: pink;
+}
+.father .son {
+  height: 100px;
+  width: 100px;
+  background-color: purple;
+}
+.box {
+  height: 200px;
+  width: 200px;
+  background-color: pink;
+  margin-top: 10px;
+  transition: all 1s;
+}
+.box::before {
+  content: '';
+  display: block;
+  height: 100px;
+  width: 100px;
+  background-color: purple;
+}
+.box:hover {
+  background-color: red;
+}

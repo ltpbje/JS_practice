@@ -1,0 +1,250 @@
+body {
+    max-width: 750px;
+    min-width: 319.9988px;
+    // width: 20rem;
+    // height: 48rem;
+    margin: 0 auto;
+    background-color: #f2f4f7;
+}
+
+// 当屏幕宽度大于750px 时使html的字体大小强制变为75px
+@media screen and (min-width:750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+
+// 头部
+header {
+    height: 1.72rem;
+    font-size: .9333rem;
+    border-bottom: .0133rem solid #eaeaea;
+    text-align: center;
+    line-height: 1.72rem;
+    font-weight: 400;
+    color: #1C1C1C;
+}
+
+// 导航栏
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .6067rem;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 33.33%;
+        text-decoration: none;
+        color: #707070;
+        font-size: .6667rem;
+        padding-top: .5333rem;
+
+        &:nth-child(-n+3) {
+            margin-bottom: .8467rem;
+        }
+
+        img {
+            width: 3.7067rem;
+            height: 3.7067rem;
+            margin-bottom: .2333rem;
+        }
+
+    }
+}
+
+// go模块
+.go {
+    margin-top: .8rem;
+
+    img {
+        margin: 0 .2667rem 0 .08rem;
+    }
+}
+
+.wrap {
+    padding: 0 0 .5733rem 0;
+    background-color: #fff;
+}
+
+// content
+.content {
+    height: 15.3333rem;
+    background-color: #fff;
+    margin-top: .2667rem;
+    padding: 1.0667rem .64rem 0;
+
+
+    .content-hd {
+        height: 1.0133rem;
+
+        h4 {
+            float: left;
+
+            img {
+                display: inline-block;
+                height: 1.0133rem;
+                width: 1.0133rem;
+                vertical-align: middle;
+            }
+
+            margin: 0;
+            font-size: .64rem;
+        }
+
+        .more {
+            float: right;
+            font-size: .5867rem;
+            color: #999999;
+            text-decoration: none;
+            line-height: 1.0133rem;
+        }
+    }
+
+}
+
+.get_job_focus {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.04rem;
+
+    .swiper-container {
+        width: 14.4rem;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        transform: scale(0.8);
+        opacity: 0.3;
+
+        a {
+            width: 9.0133rem;
+            height: 10.0267rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            width: 9.0133rem;
+            font-size: .6667rem;
+            margin-top: .64rem;
+        }
+    }
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+        transform: scale(1);
+        z-index: 999;
+        opacity: 1;
+    }
+}
+
+// 学习
+.study {
+
+
+    .study-con {
+        padding: .0533rem;
+
+        .swiper-slide {
+            padding: 0;
+
+            a {
+                text-decoration: none;
+
+            }
+
+            width: 7.68rem !important;
+            height: 9.04rem;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            padding: .2667rem .2133rem;
+            border-radius: .2667rem;
+
+            h4 {
+                padding: 0 .1867rem 0 .1867rem;
+                margin: .5333rem 0 0;
+                font-size: .6667rem;
+                color: #333740;
+            }
+
+            text-decoration: none;
+
+            p {
+                margin-top: .6667rem;
+                padding-left: 17px;
+
+                i {
+                    font-style: normal;
+                    color: #ff8267;
+                }
+
+                color: #999;
+                font-size: .6667rem;
+            }
+        }
+    }
+}
+
+// 底部模块
+.footer {
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 3.04rem;
+    width: 100%;
+    z-index: 99999999;
+    border-top: .0267rem solid #e2e2e2;
+    background-color: #fff;
+
+    .item {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+
+        img {
+            width: 1.04rem;
+            height: 1.0933rem;
+        }
+
+        p {
+            margin-top: .32rem;
+            font-size: .5867rem;
+            color: #666;
+        }
+
+        &:first-child p {
+            color: #52c4f0;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+// 将common.less文件导入index.less中
+// @import url('./common.less');
+@import 'common';
+@baseFont: 50;
+
+// body样式
+body {
+    min-width: 320px;
+    height: 400px;
+    width: (750rem / @baseFont);
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #F2F2F2;
+}
+
+// 页面元素rem的计算方式是页面元素的px除于html的字体大小
+// search-content
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: (750rem / @baseFont);
+    height: (88rem / @baseFont);
+    background-color: #ffc001;
+
+    .classify {
+        width: (44rem / @baseFont);
+        height: (70rem / @baseFont);
+        background: url(../images/classify.png) no-repeat;
+        background-size: (44rem / @baseFont) (70rem / @baseFont);
+        margin: (9rem / @baseFont) (12rem / @baseFont) (5rem / @baseFont) (12rem / @baseFont);
+    }
+
+    .login {
+        width: (75rem / @baseFont);
+        height: (70rem / @baseFont);
+        font-size: (25rem / @baseFont);
+        text-align: center;
+        line-height: (70rem / @baseFont);
+        color: #fff;
+        margin: (9rem / @baseFont) (12rem / @baseFont) (5rem / @baseFont) (12rem / @baseFont);
+    }
+
+    .search {
+        flex: 1;
+        // width: 100%;
+        margin-top: (-5rem / @baseFont);
+        height: (66rem / @baseFont);
+
+
+        // background-color: purple;
+        input {
+            width: 100%;
+            height: (66rem / @baseFont);
+            margin-top: (13rem / @baseFont);
+            border: 0;
+            color: #757575;
+            background-color: #fff2cc;
+            font-size: (25rem / @baseFont);
+            padding-left: (30rem / @baseFont);
+            border-radius: (33rem / @baseFont);
+        }
+    }
+}
+
+// banner
+.banner {
+    width: (750rem / @baseFont);
+    height: (368rem / @baseFont);
+
+    img {
+        display: block;
+        width: (750rem / @baseFont);
+        height: (368rem / @baseFont);
+    }
+}
+
+// ad 广告
+.ad {
+    display: flex;
+    height: (211.18rem / @baseFont);
+
+    a {
+        flex: 1;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+}
+
+// nav
+.nav {
+    width: (750rem / @baseFont);
+
+    a {
+        margin-top: (10rem / @baseFont);
+        float: left;
+        display: block;
+        width: (150rem / @baseFont);
+        height: (140rem / @baseFont);
+        text-align: center;
+        color: #333;
+
+        img {
+            display: block;
+            width: (82rem / @baseFont);
+            height: (82rem / @baseFont);
+            margin: (10rem / @baseFont) auto 0;
+        }
+
+        span {
+            display: block;
+            margin-top: (15rem / @baseFont);
+            font-size: (25rem / @baseFont);
+        }
+    }
+}

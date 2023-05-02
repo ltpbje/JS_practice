@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            /* 主轴方向从左到右 */
+            flex-direction: row;
+            /* 主轴方向从右到左 */
+            flex-direction: row-reverse;
+            /* 主轴方向从上到下 */
+            flex-direction: column;
+            /* 主轴方向从下到上 */
+            flex-direction: column-reverse;
+
+
+            height: 400px;
+            width: 80%;
+            background-color: pink;
+        }
+
+        div span {
+            width: 60px;
+            height: 100px;
+            margin: 0 10px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div><span>1</span><span>2</span><span>3</span></div>
+</body>
+
+</html>
