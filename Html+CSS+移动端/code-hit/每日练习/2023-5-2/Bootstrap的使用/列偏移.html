@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+          <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+        <![endif]-->
+    <!-- 一定不要忘记引入bootstrap 的样式文件 -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        [class^=col] {
+            height: 2.6667rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-3">左侧</div>
+        <div class="col-md-3 col-md-offset-6">右侧</div>
+    </div>
+    <div class="container">
+        <div class="col-md-2 col-md-offset-5">中间</div>
+    </div>
+</body>
+
+</html>

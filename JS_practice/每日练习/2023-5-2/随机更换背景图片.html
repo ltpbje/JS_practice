@@ -8,15 +8,21 @@
     <title>Document</title>
     <style>
         body {
-            background: url(./images/desktop_1.jpg) no-repeat center top cover;
+            background: url(./images/desktop_1.jpg) no-repeat left top/cover;
         }
     </style>
 </head>
 
 <body>
     <script>
-
+        function getRandom(N, M) {
+            return Math.floor(Math.random() * (M - N + 1) + N);
+        }
+        const random = getRandom(1, 10);
+        const background = document.body;
+        background.style.backgroundImage = `url(./images/desktop_${random}.jpg)`
     </script>
+
 </body>
 
 </html>
