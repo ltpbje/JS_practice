@@ -1,0 +1,19 @@
+@media screen and (min-width:1280px) {
+    html {
+        font-size: 1280px;
+    }
+}
+
+/* header */
+
+header {
+    padding-left: 0 !important;
+}
+
+.logo {
+    background-color: #429ad9;
+}
+
+header img {
+    width: 100%;
+}
