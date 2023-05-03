@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: skyblue;
+        }
+
+        .nav {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">123</div>
+    <script>
+        const div = document.querySelector('div');
+        // 追加类add()
+        // div.classList.add('nav');
+        //删除类名
+        // div.classList.remove('box');
+        // 切换类toggle 有则删除无则添加
+        // div.classList.toggle('box');
+        div.classList.toggle('nav');
+    </script>
+</body>
+
+</html>
