@@ -131,7 +131,9 @@
     // 1.获取图片元素
     const img = document.querySelector('.slider-wrapper img');
     img.src = sliderData[random].url;
-
+    // 1.获取标题元素
+    const p = document.querySelector('.slider-footer p');
+    p.innerHTML = sliderData[random].title;
   </script>
 </body>
 
