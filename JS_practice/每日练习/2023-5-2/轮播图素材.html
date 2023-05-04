@@ -99,7 +99,7 @@
     <div class="slider-footer">
       <p>对人类来说会不会太超前了？</p>
       <ul class="slider-indicator">
-        <li class="active"></li>
+        <li></li>
         <li></li>
         <li></li>
         <li></li>
@@ -126,14 +126,23 @@
       { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
       { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
     ]
-    // 生成随机数
+
+    /* 生成随机数 */
     const random = Math.floor(Math.random() * sliderData.length);
-    // 1.获取图片元素
+    /* 1.获取图片元素 */
     const img = document.querySelector('.slider-wrapper img');
     img.src = sliderData[random].url;
-    // 1.获取标题元素
+    /*  2.获取标题元素 */
     const p = document.querySelector('.slider-footer p');
     p.innerHTML = sliderData[random].title;
+    /* 3.获取slider-footer元素 */
+    const footer = document.querySelector('.slider-footer');
+    /* 修改背景颜色 */
+    footer.style.backgroundColor = sliderData[random].color;
+    /* 获取对应的小圆点 */
+    const li = document.querySelector(`.slider ul li:nth-child(${random + 1})`);
+    /* 为获取的li添加active 类名 */
+    li.classList.add('active');
   </script>
 </body>
 

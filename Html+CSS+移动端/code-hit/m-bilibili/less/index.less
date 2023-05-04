@@ -1,1 +1,25 @@
 @import url(./base.less);
+@baseSize: 3.75vw;
+
+body {
+    background-color: #fff;
+}
+
+.suspension {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: pink;
+    padding: 0 (18 / @baseSize) 0 (12 / @baseSize);
+
+    a {
+        display: block;
+
+        i {
+            font-size: (28 / @baseSize);
+            color: #fb7299;
+        }
+    }
+
+    .right {}
+}
