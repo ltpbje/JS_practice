@@ -6,44 +6,77 @@ body {
 }
 
 .suspension {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    // height: (44 / @baseSize);
-    background-color: pink;
-    padding: 0 (18 / @baseSize) 0 (12 / @baseSize);
-
-    a {
-        display: block;
-
-        i {
-            font-size: (28 / @baseSize);
-            color: #fb7299;
-        }
-    }
-
-    .right {
+    .m-navbar {
         display: flex;
-        // line-height: (44 / @baseSize);
+        justify-content: space-between;
+        width: 100%;
+        height: (44 / @baseSize);
         align-items: center;
+        // height: (44 / @baseSize);
+        background-color: pink;
+        padding: 0 (18 / @baseSize) 0 (12 / @baseSize);
+        // background-color: #fff;
 
-        .search {
+        a {
+            display: block;
+
             i {
-                font-size: (22 / @baseSize);
+                font-size: (28 / @baseSize);
+                color: #fb7299;
             }
         }
 
-        .face {
-            width: (24 / @baseSize);
-            height: (24 / @baseSize);
-            overflow: hidden;
-            margin: 0 (20 / @baseSize);
-            border-radius: (12 / @baseSize);
-        }
+        .right {
+            display: flex;
 
-        .app-btn {
-            width: (72 / @baseSize);
-            height: (24 / @baseSize);
+            // line-height: (44 / @baseSize);
+            // align-items: center;            
+            .search {
+                i {
+                    color: #ccc;
+                    font-size: (22 / @baseSize);
+                }
+            }
+
+            .face {
+                width: (24 / @baseSize);
+                height: (24 / @baseSize);
+                overflow: hidden;
+                margin: 0 (20 / @baseSize);
+                border-radius: (12 / @baseSize);
+            }
+
+            .app-btn {
+                width: (72 / @baseSize);
+                height: (24 / @baseSize);
+            }
+        }
+    }
+}
+
+// 频道
+.channel-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: (40 / @baseSize);
+    background-color: skyblue;
+
+    .tabs {
+        flex: 1;
+    }
+
+    .after {
+        display: flex;
+        width: (40 / @baseSize);
+        height: (39 / @baseSize);
+        background-color: #fff;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            color: #ccc;
+            font-size: (20 / @baseSize);
         }
     }
 }

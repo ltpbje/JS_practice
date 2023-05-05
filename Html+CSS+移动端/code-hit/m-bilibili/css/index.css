@@ -30,35 +30,59 @@ ul {
 body {
   background-color: #fff;
 }
-.suspension {
+.suspension .m-navbar {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 11.73333333vw;
+  align-items: center;
   background-color: pink;
   padding: 0 4.8vw 0 3.2vw;
 }
-.suspension a {
+.suspension .m-navbar a {
   display: block;
 }
-.suspension a i {
+.suspension .m-navbar a i {
   font-size: 7.46666667vw;
   color: #fb7299;
 }
-.suspension .right {
+.suspension .m-navbar .right {
   display: flex;
-  align-items: center;
 }
-.suspension .right .search i {
+.suspension .m-navbar .right .search i {
+  color: #ccc;
   font-size: 5.86666667vw;
 }
-.suspension .right .face {
+.suspension .m-navbar .right .face {
   width: 6.4vw;
   height: 6.4vw;
   overflow: hidden;
   margin: 0 5.33333333vw;
   border-radius: 3.2vw;
 }
-.suspension .right .app-btn {
+.suspension .m-navbar .right .app-btn {
   width: 19.2vw;
   height: 6.4vw;
+}
+.channel-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10.66666667vw;
+  background-color: skyblue;
+}
+.channel-menu .tabs {
+  flex: 1;
+}
+.channel-menu .after {
+  display: flex;
+  width: 10.66666667vw;
+  height: 10.4vw;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.channel-menu .after i {
+  color: #ccc;
+  font-size: 5.33333333vw;
 }
