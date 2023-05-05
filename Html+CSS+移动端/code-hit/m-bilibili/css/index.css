@@ -73,8 +73,10 @@ body {
 }
 .channel-menu .tabs {
   flex: 1;
+  overflow: hidden;
 }
 .channel-menu .after {
+  float: right;
   display: flex;
   width: 10.66666667vw;
   height: 10.4vw;
@@ -85,4 +87,12 @@ body {
 .channel-menu .after i {
   color: #ccc;
   font-size: 5.33333333vw;
+}
+.channel-menu .tab-list {
+  display: flex;
+}
+.channel-menu .tab-list a {
+  padding: 0 2.66666667vw;
+  white-space: nowrap;
+  font-size: 4vw;
 }

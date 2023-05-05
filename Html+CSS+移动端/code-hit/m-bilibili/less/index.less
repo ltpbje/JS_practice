@@ -64,9 +64,11 @@ body {
 
     .tabs {
         flex: 1;
+        overflow: hidden;
     }
 
     .after {
+        float: right;
         display: flex;
         width: (40 / @baseSize);
         height: (39 / @baseSize);
@@ -77,6 +79,18 @@ body {
         i {
             color: #ccc;
             font-size: (20 / @baseSize);
+        }
+    }
+
+    // tab-list
+    .tab-list {
+        display: flex;
+
+        a {
+            padding: 0 (10 / @baseSize);
+            // 禁止换行
+            white-space: nowrap;
+            font-size: (15 / @baseSize);
         }
     }
 }
