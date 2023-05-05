@@ -46,14 +46,19 @@ body {
 }
 .suspension .right {
   display: flex;
+  align-items: center;
+}
+.suspension .right .search i {
+  font-size: 5.86666667vw;
 }
 .suspension .right .face {
   width: 6.4vw;
   height: 6.4vw;
-  background-color: purple;
+  overflow: hidden;
+  margin: 0 5.33333333vw;
+  border-radius: 3.2vw;
 }
 .suspension .right .app-btn {
   width: 19.2vw;
   height: 6.4vw;
-  background-color: skyblue;
 }
