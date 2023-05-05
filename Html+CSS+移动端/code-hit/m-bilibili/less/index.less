@@ -13,7 +13,7 @@ body {
         height: (44 / @baseSize);
         align-items: center;
         // height: (44 / @baseSize);
-        background-color: pink;
+        // background-color: pink;
         padding: 0 (18 / @baseSize) 0 (12 / @baseSize);
         // background-color: #fff;
 
@@ -57,10 +57,11 @@ body {
 // 频道
 .channel-menu {
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     height: (40 / @baseSize);
-    background-color: skyblue;
+    // background-color: skyblue;
 
     .tabs {
         flex: 1;
@@ -87,10 +88,20 @@ body {
         display: flex;
 
         a {
-            padding: 0 (10 / @baseSize);
+            padding: 0 (14 / @baseSize);
             // 禁止换行
             white-space: nowrap;
-            font-size: (15 / @baseSize);
+            font-size: (14 / @baseSize);
+            color: #333;
+        }
+
+        .line {
+            position: absolute;
+            left: (16 / @baseSize);
+            bottom: 0;
+            width: (28 / @baseSize);
+            height: (2 / @baseSize);
+            background-color: #fb7299;
         }
     }
 }
