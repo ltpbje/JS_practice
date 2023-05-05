@@ -21,5 +21,19 @@ body {
         }
     }
 
-    .right {}
+    .right {
+        display: flex;
+
+        .face {
+            width: (24 / @baseSize);
+            height: (24 / @baseSize);
+            background-color: purple;
+        }
+
+        .app-btn {
+            width: (72 / @baseSize);
+            height: (24 / @baseSize);
+            background-color: skyblue;
+        }
+    }
 }

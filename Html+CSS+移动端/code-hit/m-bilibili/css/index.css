@@ -44,3 +44,16 @@ body {
   font-size: 7.46666667vw;
   color: #fb7299;
 }
+.suspension .right {
+  display: flex;
+}
+.suspension .right .face {
+  width: 6.4vw;
+  height: 6.4vw;
+  background-color: purple;
+}
+.suspension .right .app-btn {
+  width: 19.2vw;
+  height: 6.4vw;
+  background-color: skyblue;
+}
