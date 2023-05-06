@@ -69,6 +69,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 10.66666667vw;
+  border-bottom: 1px solid #ededed;
 }
 .channel-menu .tabs {
   flex: 1;
