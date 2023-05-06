@@ -6,6 +6,11 @@ body {
 }
 
 .suspension {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
     .m-navbar {
         display: flex;
         justify-content: space-between;
@@ -52,57 +57,89 @@ body {
             }
         }
     }
+
+
+    // 频道
+    .channel-menu {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        height: (40 / @baseSize);
+        // background-color: skyblue;
+        border-bottom: 1px solid #ededed;
+
+        .tabs {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .after {
+            float: right;
+            display: flex;
+            width: (40 / @baseSize);
+            height: (39 / @baseSize);
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                color: #ccc;
+                font-size: (20 / @baseSize);
+            }
+        }
+
+        // tab-list
+        .tab-list {
+            display: flex;
+
+            a {
+                padding: 0 (14 / @baseSize);
+                // 禁止换行
+                white-space: nowrap;
+                font-size: (14 / @baseSize);
+                color: #333;
+            }
+
+            .line {
+                position: absolute;
+                left: (16 / @baseSize);
+                bottom: 0;
+                width: (28 / @baseSize);
+                height: (2 / @baseSize);
+                background-color: #fb7299;
+            }
+        }
+    }
 }
 
-// 频道
-.channel-menu {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    height: (40 / @baseSize);
-    // background-color: skyblue;
-    border-bottom: 1px solid #ededed;
+// 主体
+.m-home {
+    padding: (84 / @baseSize) (5 / @baseSize) 0;
 
-    .tabs {
-        flex: 1;
-        overflow: hidden;
-    }
-
-    .after {
-        float: right;
+    .video-list {
         display: flex;
-        width: (40 / @baseSize);
-        height: (39 / @baseSize);
-        background-color: #fff;
-        justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
 
-        i {
-            color: #ccc;
-            font-size: (20 / @baseSize);
-        }
-    }
+        .video-item {
+            // height: (140 / @baseSize);
+            width: 50%;
+            // background-color: pink;
+            padding: (8 /@baseSize) (5 / @baseSize);
 
-    // tab-list
-    .tab-list {
-        display: flex;
+            .card {
+                position: relative;
+                height: (97 / @baseSize);
 
-        a {
-            padding: 0 (14 / @baseSize);
-            // 禁止换行
-            white-space: nowrap;
-            font-size: (14 / @baseSize);
-            color: #333;
-        }
-
-        .line {
-            position: absolute;
-            left: (16 / @baseSize);
-            bottom: 0;
-            width: (28 / @baseSize);
-            height: (2 / @baseSize);
-            background-color: #fb7299;
+                .count {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: (27 / @baseSize);
+                    background-color: skyblue;
+                }
+            }
         }
     }
 }
