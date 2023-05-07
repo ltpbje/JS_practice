@@ -10,6 +10,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    background-color: #fff;
+    z-index: 99999;
 
     .m-navbar {
         display: flex;
@@ -122,23 +124,45 @@ body {
         flex-wrap: wrap;
 
         .video-item {
-            // height: (140 / @baseSize);
+            // height: (150 / @baseSize);
             width: 50%;
             // background-color: pink;
             padding: (8 /@baseSize) (5 / @baseSize);
 
             .card {
                 position: relative;
-                height: (97 / @baseSize);
+                // height: (97 / @baseSize);
 
                 .count {
+                    display: flex;
                     position: absolute;
+                    justify-content: space-between;
+                    align-items: center;
                     left: 0;
                     bottom: 0;
+                    padding: (5 / @baseSize);
                     width: 100%;
                     height: (27 / @baseSize);
-                    background-color: skyblue;
+                    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), red);
+
+                    span {
+                        color: #fff;
+                        font-size: (12 / @baseSize);
+                        padding-top: (5 / @baseSize);
+
+                        i {
+                            vertical-align: middle;
+                            padding: 0 (4 / @baseSize) 0 0;
+                        }
+                    }
                 }
+
+            }
+
+            p {
+                // display: block;
+                margin-top: (5 / @baseSize);
+                font-size: (12 / @baseSize);
             }
         }
     }
