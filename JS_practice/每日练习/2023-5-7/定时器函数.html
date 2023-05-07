@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // setInterval(函数,间隔时间)时间单位是毫秒
+        setInterval(function () {
+            console.log('计时');
+        }, 1000);
+        // 函数会自动调用不必再次调用否则会出错
+        function fn() {
+            console.log('计时1');
+        }
+        // setInterval(fn(), 1000);
+        // setInterval(函数, 间隔时间)返回的是一个数字代表的是第几个计时器
+        let m = setInterval(fn, 1000);
+        console.log(m);
+        // 停止定时器
+        clearInterval(m);
+    </script>
+</body>
+
+</html>
