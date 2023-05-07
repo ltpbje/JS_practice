@@ -1,5 +1,5 @@
 @import url(./base.less);
-@baseSize: 3.75vw;
+@baseSize: 3.75vmin;
 
 body {
     background-color: #fff;
@@ -165,6 +165,31 @@ body {
                 margin-top: (5 / @baseSize);
                 font-size: (12 / @baseSize);
             }
+        }
+    }
+}
+
+// 底部
+.m-app {
+    position: fixed;
+    left: 0;
+    bottom: (20 / @baseSize);
+    height: (38 / @baseSize);
+    width: 100%;
+    z-index: 99999;
+    // background-color: red;
+
+    .app-content {
+        height: (38 / @baseSize);
+        background-color: #fb7299;
+        margin: 0 (20 / @baseSize);
+        border-radius: (19 / @baseSize);
+        text-align: center;
+        line-height: (38 / @baseSize);
+        color: #fff;
+
+        i {
+            margin-right: (10 / @baseSize);
         }
     }
 }
