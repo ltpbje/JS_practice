@@ -133,29 +133,25 @@
         const p = document.querySelector('.slider-footer p');
         const next = document.querySelector('.next');
         const footer = document.querySelector('.slider-footer');
-        // 2.为右侧按钮添加事件监听
+        // 2.按钮添加事件监听    
+        // 2.1 为右侧按钮添加事件监听
         next.addEventListener('click', function () {
             i++;
             if (i >= 8) {
                 i = 0;
             }
-            img.src = Data[i].url;
-            p.innerHTML = Data[i].title;
-            // 背景颜色
-            footer.style.backgroundColor = Data[i].color;
-            let li = document.querySelector('.slider-indicator .active');
-            li.classList.remove('active');
-
-            li = document.querySelector(`.slider-indicator li:nth-child(${i + 1})`);
-            li.classList.add('active');
+            toggle();
         });
-        // 3.为左侧按钮添加事件监听
+        // 2.2.为左侧按钮添加事件监听
         const prev = document.querySelector('.prev');
         prev.addEventListener('click', function () {
             i--;
             if (i < 0) {
                 i = 7;
             }
+            toggle();
+        });
+        function toggle() {
             img.src = Data[i].url;
             p.innerHTML = Data[i].title;
             // 背景颜色
@@ -164,7 +160,28 @@
             li.classList.remove('active');
             li = document.querySelector(`.slider-indicator li:nth-child(${i + 1})`);
             li.classList.add('active');
-        });
+        }
+
+        // 3.自动播放效果
+        let timerId = setInterval(function () {
+            // 利用JS自动调用点击事件
+            next.click();
+        }, 1000);
+        //4.鼠标移入大盒子时 停止自动播放
+        const slider = document.querySelector('.slider');
+        slider.addEventListener('mouseenter', function () {
+            // 清除定时器
+            clearInterval(timerId);
+        })
+        //4.鼠标移出大盒子时 开始自动播放
+        slider.addEventListener('mouseleave', function () {
+            clearInterval(timerId);
+            timerId = setInterval(function () {
+                // 利用JS自动调用点击事件
+                next.click();
+            }, 900);
+        })
+
     </script>
 </body>
 

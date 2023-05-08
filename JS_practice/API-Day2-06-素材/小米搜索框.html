@@ -39,6 +39,7 @@
         }
 
         .result-list {
+            display: none;
             position: absolute;
             left: 0;
             top: 48px;
@@ -77,7 +78,18 @@
         </ul>
     </div>
     <script>
-
+        const input = document.querySelector('[type="search"]');
+        const list = document.querySelector('.result-list');
+        // 得到焦点时
+        input.addEventListener('focus', function () {
+            list.style.display = 'block';
+            input.classList.add('search');
+        });
+        // 失去焦点时
+        input.addEventListener('blur', function () {
+            list.style.display = 'none';
+            input.classList.remove('search');
+        });
 
 
     </script>
