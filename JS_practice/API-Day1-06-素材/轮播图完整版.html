@@ -132,6 +132,7 @@
         const img = document.querySelector('.slider-wrapper img');
         const p = document.querySelector('.slider-footer p');
         const next = document.querySelector('.next');
+        const footer = document.querySelector('.slider-footer');
         // 2.为右侧按钮添加事件监听
         next.addEventListener('click', function () {
             i++;
@@ -140,6 +141,25 @@
             }
             img.src = Data[i].url;
             p.innerHTML = Data[i].title;
+            // 背景颜色
+            footer.style.backgroundColor = Data[i].color;
+            let li = document.querySelector('.slider-indicator .active');
+            li.classList.remove('active');
+
+            li = document.querySelector(`.slider-indicator li:nth-child(${i + 1})`);
+            li.classList.add('active');
+        });
+        // 3.为左侧按钮添加事件监听
+        const prev = document.querySelector('.prev');
+        prev.addEventListener('click', function () {
+            i--;
+            if (i < 0) {
+                i = 7;
+            }
+            img.src = Data[i].url;
+            p.innerHTML = Data[i].title;
+            // 背景颜色
+            footer.style.backgroundColor = Data[i].color;
             let li = document.querySelector('.slider-indicator .active');
             li.classList.remove('active');
             li = document.querySelector(`.slider-indicator li:nth-child(${i + 1})`);
