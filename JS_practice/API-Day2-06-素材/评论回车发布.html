@@ -117,7 +117,35 @@
       </div>
     </div>
   </div>
-
+  <script>
+    const tx = document.querySelector('#tx');
+    const total = document.querySelector('.total');
+    const item = document.querySelector('.item');
+    const text = document.querySelector('.list .text');
+    // 当文本域获得焦点时 显示total
+    tx.addEventListener('focus', function () {
+      total.style.opacity = 1;
+    });
+    // 当文本域失去焦点时 隐藏total
+    tx.addEventListener('blur', function () {
+      total.style.opacity = 0;
+    });
+    // 
+    tx.addEventListener('input', function () {
+      total.innerHTML = `${tx.value.length}/200字`;
+    });
+    // 按下回车键时发布评论
+    tx.addEventListener('keyup', function (e) {
+      if (e.key === 'Enter') {
+        // trim()方法清除字符串两侧的空格
+        if (tx.value.trim() !== '') {
+          item.style.display = 'block';
+          text.innerHTML = tx.value;
+        }
+        tx.value = '';
+      }
+    })
+  </script>
 </body>
 
 </html>
