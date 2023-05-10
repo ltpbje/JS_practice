@@ -89,7 +89,20 @@
       <div class="item"><img src="./images/tab04.png" alt="" /></div>
     </div>
   </div>
-
+  <script>
+    // 1.导航栏
+    const as = document.querySelectorAll('.tab-nav a');
+    //2.为导航栏中的a添加事件监听 
+    for (let i = 0; i < as.length; i++) {
+      as[i].addEventListener('mouseenter', function () {
+        document.querySelector('.tab-nav .active').classList.remove('active');
+        this.classList.add('active');
+        // 3.内容的切换 干掉其他的添加新的
+        document.querySelector('.tab-content .active').classList.remove('active');
+        document.querySelector(`.tab-content .item:nth-child(${i + 1})`).classList.add('active');
+      })
+    }
+  </script>
 </body>
 
 </html>

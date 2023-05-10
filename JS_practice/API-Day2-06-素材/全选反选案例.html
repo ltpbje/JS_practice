@@ -75,7 +75,25 @@
     </tr>
   </table>
   <script>
+    // 一. 业务一 全选控制小按钮功能
+    // 获取全选框
+    const checkAll = document.querySelector("#checkAll");
+    const cks = document.querySelectorAll(".ck");
+    // 添加事件监听
+    checkAll.addEventListener('click', function () {
+      for (let i = 0; i < cks.length; i++) {
+        //遍历所有小复选框 使其小复选框的checked = 全选框的checked
+        cks[i].checked = checkAll.checked;
+      }
+      // 二. 小复选框三个全选时 全选框实现自动勾选
+      for (let i = 0; i < cks.length; i++) {
+        cks[i].addEventListener('click', function () {
+          checkAll.checked = (document.querySelectorAll('.ck:checked').length === cks.length);
 
+        }
+        )
+      }
+    })
   </script>
 </body>
 
