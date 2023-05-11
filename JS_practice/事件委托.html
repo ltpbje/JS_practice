@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+        <p>我不变色</p>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // console.log(e.target)
+            // console.dir(e.target.tagName);
+            if (e.target.tagName === 'LI') {
+                // Event 接口的 target 只读属性是对事件分派到的对象的引用
+                e.target.style.color = 'red';
+            }
+        })
+    </script>
+</body>
+
+</html>

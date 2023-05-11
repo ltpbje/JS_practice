@@ -85,15 +85,15 @@
         //遍历所有小复选框 使其小复选框的checked = 全选框的checked
         cks[i].checked = checkAll.checked;
       }
-      // 二. 小复选框三个全选时 全选框实现自动勾选
-      for (let i = 0; i < cks.length; i++) {
-        cks[i].addEventListener('click', function () {
-          checkAll.checked = (document.querySelectorAll('.ck:checked').length === cks.length);
-
-        }
-        )
-      }
     })
+    // 二. 小复选框三个全选时 全选框实现自动勾选
+
+    for (let i = 0; i < cks.length; i++) {
+      cks[i].addEventListener('click', function () {
+        checkAll.checked = (document.querySelectorAll('.ck:checked').length === cks.length);
+      })
+    }
+
   </script>
 </body>
 

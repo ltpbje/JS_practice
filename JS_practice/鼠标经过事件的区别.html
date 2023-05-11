@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+
+        .son {
+            height: 100px;
+            width: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        const fa = document.querySelector('.father');
+        const son = document.querySelector('.son');
+        fa.addEventListener('mouseover', function () {
+            console.log('鼠标经过');
+        })
+        fa.addEventListener('mouseout', function () {
+            console.log('鼠标离开');
+        })
+    </script>
+</body>
+
+</html>
