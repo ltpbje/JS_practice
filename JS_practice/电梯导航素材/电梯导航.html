@@ -1239,6 +1239,24 @@
         window.scrollTo(0, 0);
       })
     })();
+    (function () {
+      const list = document.querySelector('.xtx-elevator-list')
+      list.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          const old = document.querySelector('.xtx-elevator-list .active')
+          // 如果没有active则不在移除因没有此类名移除会报错
+          if (old) old.classList.remove('active')
+          e.target.classList.add('active')
+          // 获取a的自定义属性名
+          // e.target.dataset.name
+          document.documentElement.scrollTop = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop
+        }
+
+      })
+
+
+
+    })();
   </script>
 </body>
 
