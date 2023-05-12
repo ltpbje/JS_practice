@@ -11,7 +11,12 @@
             overflow: scroll;
             height: 300px;
             width: 200px;
-            margin: 100px auto;
+            margin: 400px auto;
+            transition: all 0.5s;
+        }
+
+        body {
+            height: 1000px;
         }
     </style>
 </head>
@@ -37,10 +42,27 @@
         我里面有很多文字 我里面有很多文字
     </div>
     <script>
+        // const div = document.querySelector('div');
+        // div.addEventListener('scroll', function () {
+        //     // 获取元素被卷去的头部大小
+        //     console.log(div.scrollTop);
+        // })
+        // window.addEventListener('scroll', function () {
+        //     // 获取HTML标签
+        //     console.log(document.documentElement.scrollTop);
+        // })
         const div = document.querySelector('div');
-        div.addEventListener('scroll', function () {
-            console.log(div.scrollTop);
+        window.addEventListener('scroll', function () {
+            // 获取HTML标签
+            const n = document.documentElement.scrollTop;
+            if (n >= 100) {
+                div.style.opacity = 0;
+            }
+            else {
+                div.style.opacity = 1;
+            }
         })
+
     </script>
 </body>
 
