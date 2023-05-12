@@ -1215,27 +1215,30 @@
     </ul>
   </div>
   <script>
-    const elevator = document.querySelector('.xtx-elevator');
-    const entry = document.querySelector('.xtx_entry');
-    // 1.当页面滚动大于xtx_entry到顶部的高度时就显示电梯导航
-    window.addEventListener('scroll', function () {
-      const n = document.documentElement.scrollTop;
-      // if (n >= 300) {
-      //   elevator.style.opacity = 1;1
-      // } else {
-      //   elevator.style.opacity = 0;
-      // }
+    // 将第一模块放入自执行函数中避免变量污染
+    (function () {
+      const elevator = document.querySelector('.xtx-elevator');
+      const entry = document.querySelector('.xtx_entry');
+      // 1.当页面滚动大于xtx_entry到顶部的高度时就显示电梯导航
+      window.addEventListener('scroll', function () {
+        const n = document.documentElement.scrollTop;
+        // if (n >= 300) {
+        //   elevator.style.opacity = 1;1
+        // } else {
+        //   elevator.style.opacity = 0;
+        // }
 
-      elevator.style.opacity = n >= entry.offsetTop ? 1 : 0;
-    })
-    // 2.backTop返回网页顶部
-    const backTop = document.querySelector('#backTop');
-    backTop.addEventListener('click', function () {
-      // 返回顶部的两种方法
-      // document.documentElement.scrollTop = 0;
-      // window.scrollTo(x,y)
-      window.scrollTo(0, 0);
-    })
+        elevator.style.opacity = n >= entry.offsetTop ? 1 : 0;
+      })
+      // 2.backTop返回网页顶部
+      const backTop = document.querySelector('#backTop');
+      backTop.addEventListener('click', function () {
+        // 返回顶部的两种方法
+        // document.documentElement.scrollTop = 0;
+        // window.scrollTo(x,y)
+        window.scrollTo(0, 0);
+      })
+    })();
   </script>
 </body>
 

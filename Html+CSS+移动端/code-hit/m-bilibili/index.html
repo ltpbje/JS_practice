@@ -169,6 +169,19 @@
         <i class="iconfont Navbar_logo"></i>打开App，看你感兴趣的视频
     </div>
 </div>
+<script>
+    // 获取元素
+    const list = document.querySelector('.tab-list');
+    const line = document.querySelector('.line');
+    list.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+            // console.log(e.target.offsetLeft);
+            line.style.transform = `translateX(${e.target.offsetLeft / 3.75}vmin)`;
+
+        }
+
+    })
+</script>
 
 <body>
 

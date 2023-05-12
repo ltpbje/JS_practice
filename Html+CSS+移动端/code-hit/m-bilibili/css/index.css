@@ -112,6 +112,7 @@ body {
   width: 7.46666667vmin;
   height: 0.53333333vmin;
   background-color: #fb7299;
+  transition: all 0.3s;
 }
 .m-home {
   padding: 22.4vmin 1.33333333vmin 0;
