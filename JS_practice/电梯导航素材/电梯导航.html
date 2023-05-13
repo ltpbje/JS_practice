@@ -1242,7 +1242,7 @@
     (function () {
       const list = document.querySelector('.xtx-elevator-list')
       list.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A') {
+        if (e.target.tagName === 'A' && e.target.dataset.name) {
           const old = document.querySelector('.xtx-elevator-list .active')
           // 如果没有active则不在移除因没有此类名移除会报错
           if (old) old.classList.remove('active')
@@ -1251,6 +1251,30 @@
           // e.target.dataset.name
           document.documentElement.scrollTop = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop
         }
+
+        window.addEventListener('scroll', function () {
+          const old = document.querySelector('.xtx-elevator-list .active')
+          // 如果没有active则不在移除因没有此类名移除会报错
+          if (old) old.classList.remove('active')
+          // 获取盒子
+          const news = document.querySelector('.xtx_goods_new')
+          const popular = document.querySelector('.xtx_goods_popular')
+          const brand = document.querySelector('.xtx_goods_brand')
+          const topic = document.querySelector('.xtx_goods_topic')
+          const n = document.documentElement.scrollTop
+          if (n >= news.offsetTop && n < popular.offsetTop) {
+            document.querySelector('[data-name="new"]').classList.add('active')
+          }
+          else if (n >= popular.offsetTop && n < brand.offsetTop) {
+            document.querySelector('[data-name="popular"]').classList.add('active')
+          }
+          else if (n >= brand.offsetTop && n < topic.offsetTop) {
+            document.querySelector('[data-name="brand"]').classList.add('active')
+          }
+          else if (n >= topic.offsetTop) {
+            document.querySelector('[data-name="topic"]').classList.add('active')
+          }
+        })
 
       })
 
