@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<ul>
+    <li></li>
+</ul>
+
+<body>
+    <script>
+        const ul = document.querySelector('ul')
+        // 创建节点
+        const div = document.createElement('div')
+        // 追加节点 
+        // 插入到这个父元素的最后
+        // 父元素.appendchild(要插入的元素)
+        // document.body.appendChild(div)
+        //插入到某个子元素的前面
+        // 插入到某个子元素的前面
+        // 父元素.insertBefore(要插入的元素,在哪个元素前面)
+        ul.insertBefore(div, ul.children[0])
+        div.innerHTML = '周杰伦'
+    </script>
+</body>
+
+</html>
