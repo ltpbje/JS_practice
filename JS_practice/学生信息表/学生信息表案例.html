@@ -67,16 +67,65 @@
     const salary = document.querySelector('.salary')
     const city = document.querySelector('.city')
     const tbody = document.querySelector('tbody')
+    const items = document.querySelectorAll('[name]')
     //  创建数组接收数据和删除数据
     const arr = []
     // 1.点击模块
     const info = document.querySelector('.info')
-    info.addEventListener('commit', function () {
+    // 表单提交事件
+    info.addEventListener('submit', function (e) {
+      // 阻止默认行为
+      e.preventDefault()
+      // 输入为空则提示输入不能为空且阻止提交
+      for (let j = 0; j < items.length; j++) {
+        if (items[j].value === '') {
+          return alert('输入数据不能为空')
+        }
+      }
       const obj = {
+        stuId: arr.length + 1,
+        uname: uname.value,
+        age: age.value,
+        gender: gender.value,
+        salary: salary.value,
+        city: city.value
+      }
+      arr.push(obj)
+      console.log(arr)
+      // 重置表单
+      this.reset()
+      render()
+    })
+    // 渲染函数
+    function render() {
+      // 清空tbody
+      tbody.innerHTML = ''
+      // 创建节点
+      for (let i = 0; i < arr.length; i++) {
+        const tr = document.createElement('tr')
+        tr.innerHTML = `<tr>
+          <td>${arr[i].stuId}</td>
+          <td>${arr[i].uname} </td>
+          <td>${arr[i].age}</td>
+          <td>${arr[i].gender} </td>
+          <td>${arr[i].salary}</td>
+          <td>${arr[i].city}</td>
+          <td>
+            <a href="javascript:" data-name ="${i}">删除</a>
+          </td>
+        </tr> `
+        tbody.appendChild(tr)
+      }
+    }
+    // 删除数据操作
+    tbody.addEventListener('click', function (e) {
 
+      if (e.target.tagName === 'A') {
+        // console.log(e.target.dataset.name)
+        arr.splice(e.target.dataset.name, 1)
+        render()
       }
     })
-
   </script>
 
 </body>
