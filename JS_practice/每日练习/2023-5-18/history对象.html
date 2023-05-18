@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="back">后退</button>
+    <button class="next">前进</button>
+    <script>
+        const back = document.querySelector('.back');
+        const next = back.nextElementSibling;
+        back.addEventListener('click', function () {
+            // 历史回退一步
+            // history.back();
+            // 回退一步
+            history.go(-1);
+
+        });
+        next.addEventListener('click', function () {
+            // 历史前进一步
+            // history.forward(1);
+            // 前进一步
+            history.go(1);
+        });
+    </script>
+</body>
+
+</html>
