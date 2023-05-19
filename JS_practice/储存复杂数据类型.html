@@ -13,11 +13,14 @@
         const obj = {
             name: "pink",
             age: 18,
+            fn: function () {
+                alert('你好')
+            }
         };
         // 将复杂数据类型转换成JS0N字符串
         localStorage.setItem("obj", JSON.stringify(obj));
         // 将JSON字符串转化为对象来使用
-        console.log(localStorage.getItem("obj"));   
+        console.log(JSON.parse(localStorage.getItem("obj")));   
     </script>
 </body>
 

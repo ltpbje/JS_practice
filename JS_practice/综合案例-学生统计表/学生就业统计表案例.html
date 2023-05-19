@@ -76,102 +76,36 @@
         city: '北京',
         time: '2099/9/9 08:08:08'
       }
-    ]
-    // localStorage.setItem('data', JSON.stringify(initData))
-    // 1. 渲染业务
-    // 1.1 先读取本地存储的数据
-    // (1). 本地存储有数据则记得转换为对象然后存储到变量里面，后期用于渲染页面
-    // (2). 如果没有数据，则用 空数组来代替
-    const arr = JSON.parse(localStorage.getItem('data')) || []
-    console.log(arr)
-    // 1.2 利用map和join方法来渲染页面
-    const tbody = document.querySelector('tbody')
+    ];
+    //  
+    localStorage.setItem('initData', JSON.stringify(initData));
+    // console.log(JSON.parse(localStorage.getItem("initData")));
+    // 拿到数据
+    const arr = JSON.parse(localStorage.getItem("initData")) || [];
+    // console.log(arr);
+    // 1.渲染
     function render() {
-      // (1). 利用map遍历数组，返回对应tr的数组
-      const trArr = arr.map(function (ele, index) {
-        return `
-          <tr>
-            <td>${ele.stuId}</td>
-            <td>${ele.uname}</td>
-            <td>${ele.age}</td>
-            <td>${ele.gender}</td>
-            <td>${ele.salary}</td>
-            <td>${ele.city}</td>
-            <td>${ele.time}</td>
-            <td>
-              <a href="javascript:" data-id="${index}">
-                <i class="iconfont icon-shanchu"></i>
-                删除
-              </a>
-            </td>
-          </tr>
-        `
-      })
-
-      console.log(trArr)
-      // (2). 把数组转换为字符串 join
-      // (3). 把生成的字符串追加给tbody 
-      tbody.innerHTML = trArr.join('')
-      // 显示共计有几条数据
-      document.querySelector('.title span').innerHTML = arr.length
+      // 获取tr数组
+      const trarr = arr.map(function (ele, index) {
+        return `<tr>
+        <td>${ele.stuId}</td>
+        <td>${ele.uname}</td>
+        <td>${ele.age}</td>
+        <td>${ele.gender}</td>
+        <td>${ele.salary}</td>
+        <td>${ele.city} </td>
+        <td>${ele.time}</td>
+        <td>
+          <a href="javascript:">
+            <i class="iconfont icon-shanchu"></i>
+            删除
+          </a>
+        </td>
+      </tr>`
+      });
+      console.log(trarr);
     }
-    render()
-
-    // 2. 新增业务
-    const info = document.querySelector('.info')
-    const uname = document.querySelector('.uname')
-    const age = document.querySelector('.age')
-    const salary = document.querySelector('.salary')
-    const gender = document.querySelector('.gender')
-    const city = document.querySelector('.city')
-
-    // 2.1 form表单注册提交事件，阻止默认行为
-    info.addEventListener('submit', function (e) {
-      e.preventDefault()
-      // 2.2 非空判断
-      if (!uname.value || !age.value || !salary.value) {
-        return alert('输入内容不能为空')
-      }
-      // 2.3 给 arr 数组追加对象，里面存储 表单获取过来的数据
-      arr.push({
-        // 处理 stuId：数组最后一条数据的stuId + 1      
-        stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
-        uname: uname.value,
-        age: age.value,
-        salary: salary.value,
-        gender: gender.value,
-        city: city.value,
-        time: new Date().toLocaleString()
-      })
-      // 2.4 渲染页面和重置表单（reset()方法）
-      render()
-      this.reset() // 重置表单
-
-      // 2.5 把数组重新存入本地存储里面，记得转换为JSON字符串存储
-      localStorage.setItem('data', JSON.stringify(arr))
-    })
-
-    // 3. 删除业务
-    // 3.1 采用事件委托形式，给 tbody 注册点击事件
-    tbody.addEventListener('click', function (e) {
-      // 判断是否点击的是删除按钮  A 链接
-      if (e.target.tagName === 'A') {
-        // alert(11)
-        // 3.2 得到当前点击链接的索引号。渲染数据的时候，动态给a链接添加自定义属性例如 data-id="0"
-        console.log(e.target.dataset.id)
-
-        // 确认框 确认是否要真的删除
-        if (confirm('您确定要删除这条数据吗？')) {
-          // 3.3 根据索引号，利用 splice 删除数组这条数据
-          arr.splice(e.target.dataset.id, 1)
-          // 3.4 重新渲染页面 
-          render()
-          // 3.5 把最新 arr 数组存入本地存储
-          localStorage.setItem('data', JSON.stringify(arr))
-        }
-      }
-    })
-
+    render();
   </script>
 </body>
 
