@@ -78,12 +78,14 @@
       }
     ];
     //  
-    localStorage.setItem('initData', JSON.stringify(initData));
+    // localStorage.setItem('initData', JSON.stringify(initData));
     // console.log(JSON.parse(localStorage.getItem("initData")));
     // 拿到数据
     const arr = JSON.parse(localStorage.getItem("initData")) || [];
+    const tbody = document.querySelector('tbody');
+    const title = document.querySelector('.title span');
     // console.log(arr);
-    // 1.渲染
+    // 1.渲染业务
     function render() {
       // 获取tr数组
       const trarr = arr.map(function (ele, index) {
@@ -104,8 +106,25 @@
       </tr>`
       });
       console.log(trarr);
+      // 将数组转化为字符串形式join()方法
+      tbody.innerHTML = trarr.join("");
+      title.innerHTML = arr.length;
     }
     render();
+    // 2.提交业务
+    const info = document.querySelector('.info');
+    const uname = document.querySelector('.uname');
+    const age = document.querySelector('.age');
+    const salary = document.querySelector('.salary');
+    info.addEventListener('submit', function (e) {
+      // 阻止默认行为
+      e.preventDefault();
+      //判断非空
+      if (!uname.value || !age.value || !salary.value) {
+        return alert('输入内容不能为空');
+      }
+
+    });
   </script>
 </body>
 
