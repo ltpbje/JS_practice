@@ -78,10 +78,10 @@
       }
     ];
     //  
-    // localStorage.setItem('initData', JSON.stringify(initData));
+    // localStorage.setItem('data', JSON.stringify(initData));
     // console.log(JSON.parse(localStorage.getItem("initData")));
     // 拿到数据
-    const arr = JSON.parse(localStorage.getItem("initData")) || [];
+    const arr = JSON.parse(localStorage.getItem("data")) || [];
     const tbody = document.querySelector('tbody');
     const title = document.querySelector('.title span');
     // console.log(arr);
@@ -98,7 +98,7 @@
         <td>${ele.city} </td>
         <td>${ele.time}</td>
         <td>
-          <a href="javascript:">
+          <a href="javascript:" data-id="${index}">
             <i class="iconfont icon-shanchu"></i>
             删除
           </a>
@@ -116,6 +116,8 @@
     const uname = document.querySelector('.uname');
     const age = document.querySelector('.age');
     const salary = document.querySelector('.salary');
+    const gender = document.querySelector('.gender');
+    const city = document.querySelector('.city');
     info.addEventListener('submit', function (e) {
       // 阻止默认行为
       e.preventDefault();
@@ -123,8 +125,31 @@
       if (!uname.value || !age.value || !salary.value) {
         return alert('输入内容不能为空');
       }
-
+      arr.push({
+        stuId: arr.length ? arr[arr.length - 1].stuId : 1,
+        uname: uname.value,
+        age: age.value,
+        salary: salary.value,
+        gender: gender.value,
+        city: city.value,
+        time: new Date().toLocaleString()
+      })
+      render();
+      this.reset();
+      // 存储到本地存储中去 将对象转换为JSON字符串
+      localStorage.setItem('data', JSON.stringify(arr));
     });
+    // 3.删除业务
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        // console.log(e.target.dataset.id);
+        if (confirm('确定要删除数据吗？')) {
+          arr.splice(e.target.dataset.id, 1);
+          render();
+          localStorage.setItem('data', JSON.stringify(arr));
+        }
+      }
+    })
   </script>
 </body>
 
