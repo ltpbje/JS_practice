@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr = 'web前端开发';
+        // const reg = /web/;
+        // // 检测是否匹配
+        // console.log(reg.test(arr));
+        // // 获取匹配项
+        // console.log(reg.exec(arr));//获取匹配项返回一个数组
+        // console.log('--------------------');
+        // //元字符
+        // //1.边界符
+        // console.log(/^二哈/.test("二哈"));
+        // console.log(/^二哈/.test("二哈二哈"));
+        // console.log(/^二哈$/.test('二哈'));//true
+        // console.log(/^二哈$/.test('二哈二哈'));//false
+        // // 2.量词
+        // // * 出现 >=0 次
+        // console.log(/^哈*$/.test('二哈'));//flase
+        // console.log(/^哈*$/.test(''));
+        // console.log(/^哈*$/.test('哈'));
+        // console.log(/^哈*$/.test('哈哈'));
+        // console.log(/^哈*$/.test('哈哈哈'));
+        // console.log(/^哈*$/.test('哈哈哈哈'));
+        // console.log(/^哈*$/.test('哈哈哈哈哈'));
+        // + 重复出现 >=1 次
+        console.log(/^哈*$/.test('二哈'));//flase
+        console.log(/^哈*$/.test(''));
+        console.log(/^哈*$/.test('哈'));
+        console.log(/^哈*$/.test('哈哈'));
+        console.log(/^哈*$/.test('哈哈哈'));
+        console.log(/^哈*$/.test('哈哈哈哈'));
+        console.log(/^哈*$/.test('哈哈哈哈哈'));
+        // ? 出现 1 || 0
+        console.log(/^哈*$/.test('二哈'));//flase
+        console.log(/^哈*$/.test(''));
+        console.log(/^哈*$/.test('哈'));
+        console.log(/^哈*$/.test('哈哈'));
+        console.log(/^哈*$/.test('哈哈哈'));
+        console.log(/^哈*$/.test('哈哈哈哈'));
+        console.log(/^哈*$/.test('哈哈哈哈哈'));
+    </script>
+</body>
+
+</html>
