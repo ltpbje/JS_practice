@@ -125,8 +125,9 @@
       if (!uname.value || !age.value || !salary.value) {
         return alert('输入内容不能为空');
       }
+      console.log(arr.length ? arr[arr.length - 1].stuId : 1);
       arr.push({
-        stuId: arr.length ? arr[arr.length - 1].stuId : 1,
+        stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
         uname: uname.value,
         age: age.value,
         salary: salary.value,
