@@ -274,6 +274,48 @@
       span.innerHTML = ``;
       return true;
     };
+
+
+
+    // 密码验证
+    const password = document.querySelector('[name="password"]');
+    password.addEventListener('change', verifyPassword);
+    // 封装函数verifyCode
+    function verifyPassword() {
+      // console.log(11);
+      const reg = /^[a-zA-Z0-9-_]{6,20}$/;
+      const span = password.nextElementSibling;
+      if (!reg.test(password.value)) {
+        span.innerHTML = `输入不合法`;
+        return false;
+      }
+      span.innerHTML = ``;
+      return true;
+    };
+
+
+
+    // 再次密码验证
+    const confirm = document.querySelector('[name="confirm"]');
+    confirm.addEventListener('change', verifyConfirm);
+    // 封装函数verifyCode
+    function verifyConfirm() {
+      // console.log(11);
+      const span = confirm.nextElementSibling;
+      if (confirm.value !== password.value) {
+        span.innerHTML = `输入与第一次输入不符`;
+        return false;
+      }
+      span.innerHTML = ``;
+      return true;
+    };
+
+
+    // 同意协议
+    const queren = document.querySelector('.icon-queren');
+    queren.addEventListener('click', function () {
+      queren.classList.toggle('icon-queren2');
+    });
   </script>
 </body>
 
