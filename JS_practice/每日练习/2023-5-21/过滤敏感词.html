@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10">pink老师上课非常激情，希望和你有基情</textarea>
+    <button>上传</button>
+    <div></div>
+    <script>
+        const tx = document.querySelector('textarea');
+        const btn = document.querySelector('button');
+        const div = document.querySelector('div');
+        btn.addEventListener('click', function () {
+            div.innerHTML = tx.value.replace(/激情|基情/g, '**');
+        });
+    </script>
+</body>
+
+</html>

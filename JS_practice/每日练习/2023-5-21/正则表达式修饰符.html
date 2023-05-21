@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(/^java$/.test('java'));//true
+        console.log(/^java$/.test('Java'));//flase
+        // 忽略大小写
+        console.log(/^java$/i.test('Java'));//true
+        const arr = "java是门好的编程语言,学好JAVA可以找到好工作";
+        // const re = arr.replace(/java/i, '前端');
+        const re = arr.replace(/java/ig, '前端');
+        console.log(re);
+    </script>
+</body>
+
+</html>
