@@ -21,7 +21,7 @@
   <!-- 登录内容 -->
   <div class="xtx-login-main">
     <div class="wrapper">
-      <form action="">
+      <form action="" autocomplete="off">
         <div class="box">
           <div class="tab-nav">
             <a href="javascript:;" class="active" data-id="0">账户登录</a>
@@ -77,7 +77,46 @@
     </div>
   </div>
   <script>
-
+    const tab = document.querySelector('.tab-nav');
+    const pane = document.querySelectorAll('.tab-pane');
+    const agree = document.querySelector('[name="agree"]');
+    const form = document.querySelector('form');
+    const userName = document.querySelector('[name="username"]');
+    tab.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        tab.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active');
+        // tab栏切换
+        for (let i = 0; i < pane.length; i++) {
+          pane[i].style.display = 'none';
+        }
+        pane[e.target.dataset.id].style.display = '';
+      }
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!agree.checked) {
+        alert('请勾选协议');
+      }
+      localStorage.setItem('xtx-uname', userName.value);
+      location.href = './index.html';
+    });
+    const li1 = document.querySelector('.xtx_navs li:nth-child(1)');
+    const li2 = li1.nextElementSibling();
+    // 渲染函数
+    function render() {
+      const userName = localStorage.getItem('xtx-uname');
+      console.log(userName);
+      if (userName) {
+        li1.innerHTML = `<a href="javascript:;"><i class="iconfont icon-user">${userName}</i></a>`;
+        li2.innerHTML = `<a href="javascript:;">退出登录</a>`;
+      }
+      else {
+        li1.innerHTML = `<a href="./login.html">请先登录</a>`
+        li2.innerHTML = ` <a href="./register.html">免费注册</a>`;
+      }
+    }
+    render();
   </script>
 </body>
 

@@ -316,6 +316,20 @@
     queren.addEventListener('click', function () {
       queren.classList.toggle('icon-queren2');
     });
+
+    // 提交模块
+    const form = document.querySelector('.xtx-form');
+    form.addEventListener('submit', function (e) {
+      if (!queren.classList.contains('icon-queren2')) {
+        alert('请勾选同意用户协议');
+        e.preventDefault();
+      }
+      if (!verifyName()) e.preventDefault();
+      if (!verifyPhone()) e.preventDefault();
+      if (!verifyCode()) e.preventDefault();
+      if (!verifyPassword()) e.preventDefault();
+      if (!verifyConfirm()) e.preventDefault();
+    });
   </script>
 </body>
 
