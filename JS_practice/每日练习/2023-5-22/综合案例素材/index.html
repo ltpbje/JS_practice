@@ -1219,8 +1219,30 @@
   </div>
 
   <script>
-
-
+    const li1 = document.querySelector('.xtx_navs li:nth-child(1)');
+    const li2 = li1.nextElementSibling;
+    // 渲染函数
+    function render() {
+      const userName = localStorage.getItem('xtx-uname');
+      console.log(userName);
+      if (userName) {
+        li1.innerHTML = `<a href="javascript:;"><i class="iconfont icon-user">${userName}</i></a>`;
+        li2.innerHTML = `<a href="javascript:;">退出登录</a>`;
+      }
+      else {
+        li1.innerHTML = `<a href="./login.html">请先登录</a>`
+        li2.innerHTML = ` <a href="./register.html">免费注册</a>`;
+      }
+    }
+    render();
+    // 退出登录
+    li2.addEventListener('click', function () {
+      if (li2.innerHTML === '<a href="javascript:;">退出登录</a>') {
+        console.log(11);
+        localStorage.removeItem('xtx-uname');
+        render();
+      }
+    });
   </script>
 </body>
 
