@@ -18,6 +18,41 @@
 <body>
     <button>点击发送请求</button>
     <div id="result"></div>
+    <script>
+        // 获取button元素
+        const btn = document.querySelector('button');
+        const result = document.getElementById('result');
+        btn.onclick = function () {
+            //1.请求   
+            // 1.1.创建对象
+            const xhr = new XMLHttpRequest();
+            // 1.2.初始化设置请求方法和url
+            xhr.open('GET', 'http://127.0.0.1:8000/server');
+            // 1.3.发送请求
+            xhr.send();
+            // 事件绑定 处理服务端返回的结果
+            // on  when 当....时候
+            // readystate 是 xhr 对象中的属性, 表示状态 0 1 2 3 4
+            // change  改变
+            xhr.onreadystatechange = function () {
+                //判断 (服务端返回了所有的结果)
+                // 根据服务端状态来
+                if (xhr.readyState === 4) {
+                    //判断响应状态码 200  404  403 401 500
+                    // 2xx 成功
+                    if (xhr.status >= 200 && xhr.status <= 300) {
+                        //处理结果 行 头 空行 体
+                        // 响应
+                        console.log(xhr.status);//状态码
+                        console.log(xhr.statusText);//状态字符串
+                        console.log(xhr.getAllResponseHeaders());//所有响应头
+                        console.log(xhr.response);//响应体
+                        result.innerHTML = xhr.response;
+                    }
+                }
+            }
+        };
+    </script>
 </body>
 
 </html>
