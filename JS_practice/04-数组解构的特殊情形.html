@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 变量少，单元值多
+        // const [a, b, c] = ['小米', '苹果', '华为', '格力'];
+        // console.log(a);//小米
+        // console.log(b); //苹果
+        // console.log(c); //华为
+        // 利用剩余参数变量少，单元值多
+        // const [a, b, ...tel] = ['小米', '苹果', '华为', '格力', 'vivo'];
+        // console.log(a);//小米
+        // console.log(b);//苹果
+        // console.log(tel);//['华为', '格力', 'vivo']
+        // // 防止有undefined传递单元值的情况，可以设置默认值：
+        // const [a = '手机', b = '华为'] = ['小米'];
+        // console.log(a);//小米
+        // console.log(b);//华为
+        // 按需导入，忽略某些值
+        const [a, , c, d] = ['小米', '苹果', '华为', '格力', 'vivo'];
+        console.log(a);//小米
+        console.log(c);//华为
+        console.log(d);//格力
+    </script>
+</body>
+
+</html>

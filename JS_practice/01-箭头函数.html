@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 语法1.基本写法
+        // const fn1 = () => {
+        //     console.log('我是箭头函数');
+        // };
+        // fn1();
+        // //语法2. 只有一个参数可以省略小括号
+        // const fn2 = x => {
+        //     return x + x;
+        // };
+        // console.log(fn2(2));
+        // //语法3. 如果函数体只有一行代码，可以写到一行上，并且无需写return直接返回值
+        // const fn3 = (x, y) => x + y;
+        // console.log(fn3(1, 2));
+        // // 语法4：加括号的函数体返回对象字面量表达式
+        // const fn4 = uname => ({ uname: uname });
+        // console.log(fn4('pink老师'));
+        // 箭头函数 不会自己创建 this 只会从自己的作用域链的上一层沿用this。
+        // const fn1 = () => this;
+        // console.log(fn1());//window
+        function outer() {
+            const fn2 = () => console.log(this);
+            fn2();
+        };
+        // window.outer window调用的outer所以this指向window
+        console.log(outer());//window
+    </script>
+</body>
+
+</html>
