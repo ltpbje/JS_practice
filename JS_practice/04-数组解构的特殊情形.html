@@ -24,11 +24,20 @@
         // const [a = '手机', b = '华为'] = ['小米'];
         // console.log(a);//小米
         // console.log(b);//华为
-        // 按需导入，忽略某些值
-        const [a, , c, d] = ['小米', '苹果', '华为', '格力', 'vivo'];
-        console.log(a);//小米
+        // // 按需导入，忽略某些值
+        // const [a, , c, d] = ['小米', '苹果', '华为', '格力', 'vivo'];
+        // console.log(a);//小米
+        // console.log(c);//华为
+        // console.log(d);//格力
+        // //支持多维数组的解构
+        // const [a, b] = ['苹果', ['小米', '华为']];
+        // console.log(a);//苹果
+        // console.log(b);//['小米','华为']
+        const [a, [b, c]] = ['苹果', ['小米', '华为']];
+        console.log(a);//苹果
+        console.log(b);//小米
         console.log(c);//华为
-        console.log(d);//格力
+
     </script>
 </body>
 

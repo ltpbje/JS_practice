@@ -26,6 +26,17 @@ app.all('/server', (request, response) => {
     // 设置响应体
     response.send('HELLO AJAX POST');
 });
+app.all('/JSON-server', (request, response) => {
+    // 设置响应头，设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', '*');
+    const data = {
+        name: 'atguigu'
+    };
+    // 设置响应体
+    response.send(JSON.stringify(data));
+
+});
 
 // 4.监听端口启动服务
 app.listen(8000, () => {

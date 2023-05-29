@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const pig = { name: '佩奇', age: 6 };
+        // const { name, age } = pig;
+        // console.log(name);//佩奇
+        // console.log(age);//6
+
+        // const pig = { name: '佩奇', age: 6 };
+        // const { name: uname, age } = pig;
+        // console.log(uname);//佩奇
+        // console.log(age);//6
+
+        const goods = [{
+            goodsName: '小米',
+            price: 1999
+        }];
+        const [{ goodsName, price }] = goods;
+        console.log(goodsName);//小米
+        console.log(price);//1999
+    </script>
+</body>
+
+</html>

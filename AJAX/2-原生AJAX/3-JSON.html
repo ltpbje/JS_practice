@@ -19,15 +19,20 @@
     <div id="result"></div>
     <script>
         // 1.创建对象
-        const xhr = new XMLHttpRequest;
+        const xhr = new XMLHttpRequest();
         const result = document.querySelector('#result');
         // 2.初始化 设置请求类型与URL
-        xhr.open('POST', 'http://127.0.0.1:8000/server');
+        xhr.open('POST', 'http://127.0.0.1:8000/JSON-server');
         //发送请求 
         xhr.send();
         window.addEventListener('keyup', function () {
             xhr.onreadystatechange = function () {
-
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log(11);
+                        console.log(xhr.response);
+                    }
+                }
             };
         });
     </script>
