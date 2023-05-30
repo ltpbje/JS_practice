@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = ['小米', '华为', 'vivo'];
+        //forEach()不会像map()方法那样返回数组
+        const a = arr.forEach((item, index) => {
+            console.log(item);//数组中的元素
+            console.log(index);//索引号
+        });
+        console.log(a);//undefined
+    </script>
+</body>
+
+</html>
