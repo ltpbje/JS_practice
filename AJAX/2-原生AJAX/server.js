@@ -31,10 +31,31 @@ app.all('/JSON-server', (request, response) => {
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Access-Control-Allow-Headers', '*');
     const data = {
-        name: 'atguigu'
+        name: 'pink',
+        age: 18
     };
     // 设置响应体
     response.send(JSON.stringify(data));
+
+});
+// 针对IE缓存
+app.get('/ie', (request, response) => {
+    // 设置响应头，设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', '*');
+    // 设置响应体
+    response.send('Hello IE 2');
+
+});
+// 延时情况
+app.get('/delay', (request, response) => {
+    // 设置响应头，设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', '*');
+    // 设置响应体
+    setTimeout(() => {
+        response.send('延时发送');
+    }, 3000);
 
 });
 

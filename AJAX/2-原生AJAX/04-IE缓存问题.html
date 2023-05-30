@@ -10,30 +10,30 @@
         #result {
             width: 200px;
             height: 100px;
-            border: 1px solid pink;
+            border: 1px solid #90b;
         }
     </style>
 </head>
 
 <body>
+    <button>点击发送请求</button>
     <div id="result"></div>
     <script>
-        // 1.创建对象
-        const xhr = new XMLHttpRequest();
         const result = document.querySelector('#result');
-        // 2.初始化 设置请求类型与URL
-        xhr.open('POST', 'http://127.0.0.1:8000/JSON-server');
-        //发送请求 
-        xhr.send();
-        window.addEventListener('keyup', function () {
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            const xhr = new XMLHttpRequest();
+            // 解决IE缓存问题
+            xhr.open('GET', 'http://127.0.0.1:8000/ie?t=' + Date.now());
+            xhr.send();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        console.log(11);
+                        result.innerHTML = xhr.response;
                         console.log(xhr.response);
                     }
                 }
-            };
+            }
         });
     </script>
 </body>
