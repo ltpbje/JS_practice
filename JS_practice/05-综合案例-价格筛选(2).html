@@ -149,7 +149,7 @@
         ]
         const list = document.querySelector('.list');
         // 渲染函数
-        function render() {
+        function render(goodsList) {
             let str = '';
             goodsList.forEach(item => {
                 const { name, price, picture } = item;
@@ -158,8 +158,28 @@
       <p class="name">${name}</p>
       <p class="price">${price}</p>
     </div>`;
+                list.innerHTML = str;
             });
         }
+        render(goodsList);
+        //为filter添加事件监听
+        // 筛选价格区间业务
+        document.querySelector('.filter').addEventListener('click', e => {
+            const { tagName, dataset } = e.target;
+            if (tagName === "A") {
+                let arr = goodsList;
+                if (dataset.index === '1') {
+                    arr = goodsList.filter(item => item.price > 0 && item.price <= 100);
+                } else if (dataset.index === '2') {
+                    arr = goodsList.filter(item => item.price >= 100 && item.price <= 300);
+                }
+                else if (dataset.index === '3') {
+                    arr = goodsList.filter(item => item.price >= 300);
+                }
+                render(arr);
+            }
+        });
+
     </script>
 </body>
 
