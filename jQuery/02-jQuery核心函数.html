@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <button>按钮</button>
+    <script>
+        // $(function () {
+        //     alert('核心函数内部');
+        // })//当使用函数作为jQuery的参数时，jQuery会使该函数在文档加载完毕后执行
+        // alert('核心函数外部');
+        $('button').click(function () {
+            // alert($('button'));//获取的是jQuery对象
+            // alert(document.querySelector('button'));//获取的是DOM对象
+            const $ele = $('<h1>123</h1>');
+            $('div').append($ele);
+        });
+    </script>
+</body>
+
+</html>

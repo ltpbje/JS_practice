@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery-3.7.0.js"></script>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box2 {
+            border: 5px solid red;
+        }
+
+        .box3 {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+
+    <hr>
+
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+
+    <script>
+        $('#btn').click(function () {
+            // $('.box1').addClass(['box2', 'box3']);
+            // this.classList.add('box2');
+            // $('.box1').addClass(function (index, className) {
+            //     if (index % 2 === 0) {
+            //         // $(this).addClass(['box2', 'box3']);
+            //         $(this).addClass('box2');
+            //     }
+            //     else {
+            //         this.classList.add('box3');
+            //     }
+            // });
+            $('.box1').addClass(function (index) {
+                // 回调函数的返回值会成为当前元素的class
+                // return ["box2", "box3"]
+                if (index % 2 === 0) {
+                    return 'box2';
+                }
+                else {
+                    return 'box3';
+                }
+            });
+            $('.box3').removeClass();
+            console.log($('.box1').hasClass('box4'));//false
+            console.log($('.box1').hasClass('box3'));//true
+        });
+    </script>
+</body>
+
+</html>
