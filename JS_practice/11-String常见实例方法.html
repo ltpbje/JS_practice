@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const str = 'pink老师在上课';
+        // 实例属性
+        console.log(str.length);
+        const str1 = 'PinK2023-6-1';
+        //-实例方法
+        //  --将字符串拆分成数组 split()方法
+        console.log(str1.split('-'));
+        //  --字符串的截取 substring(需要截取的第一个字符的索引[, 结束的索引号])
+        console.log(str.substring(7));
+        //  --检测是否是以规定的字符串开头
+        console.log(str.startsWith('pink'));//true
+        //  --判断是否含有某字符串
+        console.log(str.includes('上课')); //true
+        console.log(str.includes('pink', 2));//flase  
+        console.log(str.toUpperCase());//字母全部转换为大写
+        console.log(str1.toLowerCase());//字母全部转换为小写
+        console.log(str.indexOf('ink'));//1
+        console.log(str.indexOf('ik'));//-1表示未找到
+        console.log(str.indexOf('ink', 1));//-1表示未找到
+        console.log(str.endsWith('上课'));//true
+        console.log(str.endsWith('上课了'));//flase
+        console.log(str.replace('pink', '刘德华'));
+        console.log(str.replace('pink', '刘德华'));
+        console.log(str);
+        console.log(str.match('pink'));
+    </script>
+</body>
+
+</html>
