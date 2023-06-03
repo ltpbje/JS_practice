@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script/jquery-3.7.0.js"></script>
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                const swk = $('#list li:first-child');
+                swk.click(function () {
+                    alert('孙悟空');
+                });
+                const swk1 = $('#list li:first-child').clone(true);
+                $('#list2').append(swk1);
+            });
+
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn">点我</button>
+
+    <hr>
+
+    <ul id="list">
+        <li>孙悟空</li>
+        <li>猪八戒</li>
+    </ul>
+
+    <ul id="list2">
+        <li>沙和尚</li>
+        <li>唐僧</li>
+    </ul>
+</body>
+
+</html>
