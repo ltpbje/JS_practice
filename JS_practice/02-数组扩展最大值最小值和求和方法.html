@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.求最大值方法
+        Array.prototype.Max = function () {
+            //展开运算符
+            return Math.max(...this);
+        };
+        // 2.求最小值方法
+        Array.prototype.Min = function () {
+            //展开运算符
+            return Math.min(...this);
+        };
+        // 3.求和方法
+        Array.prototype.Sum = function () {
+            return this.reduce((prev, current) => prev + current, 0);
+        };
+        const arr = [12, 22, 33, 44];
+        console.log(arr.Max());//44
+        console.log(arr.Min());//12
+        console.log(arr.Sum());//111
+    </script>
+</body>
+
+</html>
