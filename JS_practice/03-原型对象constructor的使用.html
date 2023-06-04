@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            that = this;
+            this.uname = uname;
+            this.age = age;
+        }
+        Star.prototype = {
+            // 手动使原型对象指向构造函数
+            constructor: Star,
+            sing: () => {
+                console.log('唱歌');
+            },
+            dance: () => {
+                console.log('跳舞');
+            }
+        }
+        const ldh = new Star('刘德华', '55');
+        const zxy = new Star('张学友', '58');
+        console.log(Star.prototype.constructor);//f Object()
+        console.log(Star.prototype.constructor);//f Star()
+    </script>
+</body>
+
+</html>
