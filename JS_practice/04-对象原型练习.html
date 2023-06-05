@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name) {
+            this.name = name;
+        };
+        const peppa = new Person('佩奇');
+        Person.prototype.sayHi = function () {
+            console.log('Hi');
+        }
+        console.log(Person);
+        console.log(peppa);
+        console.log(peppa.constructor);//           实例对象.constructor  指向=>  构造函数
+        console.log(Person.prototype.constructor);//原型对象.constructor  指向=>  构造函数
+        // 对象原型是随着实例对象产生而自动创造的
+        console.log(peppa.__proto__);//             对象原型              指向=>  原型对象
+    </script>
+</body>
+
+</html>

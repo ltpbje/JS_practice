@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Person = {
+            eyes: 2,
+            head: 1
+        };
+        function Woman() {
+
+        };
+        function Man() {
+
+        };
+        Woman.prototype = Person;
+        // 手动将原型对象指向构造函数
+        Woman.prototype.constructor = Woman;
+        const red = new Woman();
+        console.log(red);
+        console.log(red.eyes);
+
+        Man.prototype = Person;
+        Man.prototype.constructor = Man;
+        const pink = new Man();
+        console.log(pink);
+        console.log(pink.eyes); 
+    </script>
+</body>
+
+</html>
