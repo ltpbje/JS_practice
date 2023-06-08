@@ -66,6 +66,7 @@
 <body>
   <button id="delete">删除</button>
   <button id="login">登录</button>
+  <button id="add">新增</button>
 
   <!-- <div class="modal">
     <div class="header">温馨提示 <i>x</i></div>
@@ -76,29 +77,43 @@
   <script>
     // 1.Modal 构造函数的封装
     function Modal(title = '', message = '') {
-      this.modelBox = document.createElement('div');
-      this.modelBox.innerHTML = `
+      this.modalBox = document.createElement('div');
+      this.modalBox.innerHTML = `
       <div class="modal">
         <div class="header">${title}<i>x</i></div>
         <div class="body">${message}</div>
       </div>
       `;
-      // console.log(this.modelBox.innerHTML);
+      // console.log(this.modalBox.innerHTML);
     }
     // 必须要有实例对象调用构造函数才生效
     // const login = new Modal('友情提示', '您还没有登录');
     // 2. open()方法挂载到原型对象上
     Modal.prototype.open = function () {
-      document.body.append(this.modelBox);
+      const box = document.querySelector('.modal');
+      box && box.remove();
+      document.body.append(this.modalBox);
+      this.modalBox.querySelector('i').addEventListener('click', () => {
+        this.close();
+      });
     }
     // 删除按钮
     document.querySelector('#delete').addEventListener('click', () => {
       const del = new Modal('温馨提示', '您没有删除权限操作');
       del.open();
     });
-    // 
+    Modal.prototype.close = function () {
+      // Element.remove() 方法，把对象从它所属的 DOM 树中删除。
+      this.modalBox.remove();
+    };
+    // 登录按钮
     document.querySelector('#login').addEventListener('click', () => {
       const login = new Modal('友情提示', '您还没有登录');
+      login.open();
+    });
+    // 新增按钮
+    document.querySelector('#add').addEventListener('click', () => {
+      const login = new Modal('强烈提示', '您不能新增');
       login.open();
     });
 

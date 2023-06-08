@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: 'pink',
+            age: 18,
+            hobby: ['乒乓球', '足球', '排球']
+        }
+        const o = {};
+        function deppCopy(newObj, oldObj) {
+            for (let k in oldObj) {
+                if (oldObj[k] instanceof Array) {
+                    newObj[k] = [];
+                    deppCopy(newObj[k], oldObj[k]);
+                } else {
+                    newObj[k] = oldObj[k];
+                }
+            }
+        };
+        deppCopy(o, obj);
+        o.hobby[1] = '篮球';
+        console.log(o);
+        console.log(obj);
+    </script>
+</body>
+
+</html>
