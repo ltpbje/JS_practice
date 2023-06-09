@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            age: 18
+        };
+        function fn(x, y) {
+            console.log(this);
+            console.log(x + y);
+        };
+        fn.apply(obj, [1, 2]);
+        const arr = [12, 44, 33, 22];
+        const max = Math.max.apply(null, arr);
+        const min = Math.min.apply(null, arr);
+        console.log(max);
+        console.log(min);
+    </script>
+</body>
+
+</html>

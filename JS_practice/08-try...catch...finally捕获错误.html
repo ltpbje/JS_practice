@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>111</p>
+    <script>
+        function foo() {
+            try {                  //试一试
+                const p = document.querySelector('p');
+                p.style.color = 'red';
+            } catch (err) {        //拦截错误
+                console.log(err.message);
+                throw new Error('你看看，选择器错误了');
+            } finally {
+                alert('无论错误与否我都会执行');
+            }
+            console.log('当没有错误时我才会执行');
+        };
+        foo();
+    </script>
+</body>
+
+</html>
