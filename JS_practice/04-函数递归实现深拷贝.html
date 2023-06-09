@@ -13,23 +13,34 @@
         const obj = {
             name: 'pink',
             age: 18,
-            hobby: ['乒乓球', '足球', '排球']
+            hobby: ['乒乓球', '足球', '排球'],
+            family: {
+                baby: '小pink'
+            }
         }
         const o = {};
         function deppCopy(newObj, oldObj) {
             for (let k in oldObj) {
+                // 必须先数组然后再对象
+                // 因为数组也属于对象
                 if (oldObj[k] instanceof Array) {
                     newObj[k] = [];
                     deppCopy(newObj[k], oldObj[k]);
-                } else {
+                } else if (oldObj[k] instanceof Object) {
+                    newObj[k] = {};
+                    deppCopy(newObj[k], oldObj[k]);
+                }
+                else {
                     newObj[k] = oldObj[k];
                 }
             }
         };
         deppCopy(o, obj);
+        o.age = 20;
         o.hobby[1] = '篮球';
-        console.log(o);
+        o.family.baby = '老pink';
         console.log(obj);
+        console.log(o);
     </script>
 </body>
 
