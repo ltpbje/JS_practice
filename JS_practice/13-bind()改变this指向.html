@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            age: 18
+        };
+        function fn(x, y) {
+            console.log(this);
+            console.log(x + y);
+        };
+        const foo = fn.bind(obj, 2, 3);
+        console.log(foo);
+        foo();
+    </script>
+</body>
+
+</html>
