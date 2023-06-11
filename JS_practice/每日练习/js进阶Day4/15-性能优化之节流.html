@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        height: 200px;
+        width: 300px;
+        background: #a2a;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        padding: 90px 0;
+        box-sizing: border-box;
+        /* vertical-align: middle; */
+        /* padding: 10px auto; */
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        const box = document.querySelector('.box');
+        let i = 0;
+        function mouseMove() {
+            box.innerHTML = ++i;
+        }
+        // 1.lodash来实现节流
+        // box.addEventListener('mousemove', _.throttle(mouseMove,3000));
+        // 2.利用函数实现节流
+        function throttle(fn, t) {
+            let timer = null;
+            return function () {
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        fn();
+                        timer = null
+                    }, t);
+                };
+            };
+        };
+        box.addEventListener('mousemove', throttle(mouseMove, 1000));
+    </script>
+</body>
+
+</html>
