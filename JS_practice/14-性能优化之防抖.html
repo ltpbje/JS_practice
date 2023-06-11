@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        height: 200px;
+        width: 300px;
+        background: #a2a;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        padding: 90px 0;
+        box-sizing: border-box;
+        /* vertical-align: middle; */
+        /* padding: 10px auto; */
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        const box = document.querySelector('.box');
+        let i = 0;
+        function mouseMove() {
+            box.innerHTML = ++i;
+        }
+        //1. lodash实现防抖
+        // box.addEventListener('mousemove', _.debounce(mouseMove,1000));
+        // 2.防抖函数
+        function debounce(fn, t) {
+            let timer;
+            return function () {
+                if (timer) clearTimeout(timer);
+                timer = setTimeout(fn, t);
+            };
+        };
+        //                                因此处的debounce()带小括号会直接调用执行 所以要用到return
+        box.addEventListener('mousemove', debounce(mouseMove, 200));
+    </script>
+</body>
+
+</html>
