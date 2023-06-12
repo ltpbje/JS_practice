@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>111</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <hr>
+    </hr>
+    <input type="radio" name="gender" id="man" value="男">男
+    <input type="radio" name="gender" id="woman" value="女" checked>女
+
+    <script src="./script/jquery-3.7.0.min.js"></script>
+    <script>
+        var $li1 = $('li:first-child');
+        $li1.click(function () {
+            console.log(11);
+        });
+        $('ul li:nth-child(2)').after('<li>在元素后面添加元素</li>');
+        $('<li>将该元素插入到选定的元素后面</li>').insertAfter($('ul li:nth-child(3)'));
+        $('<li>将该元素插入到选定的元素前面</li>').insertBefore($('ul li:nth-child(3)'));
+        $('button').click(function () {
+            $('ul').empty();//删除所有的子元素
+        });
+        // $('ul li:last-child').remove();//同时删除该元素的事件
+        $li1.detach();//保留该元素的事件
+        $('ul').append($li1);
+        $('<li>替换之后</li>').replaceAll($('ul li:nth-child(3)'));
+        $('ul li:last-child').replaceWith('<li>replacewith()替换之后</li>');
+        // console.log($('input[id =man]').attr('type'));
+        // console.log($('#man').attr('type'));
+        
+    </script>
+</body>
+
+</html>

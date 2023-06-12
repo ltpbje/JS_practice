@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $('li').unwrap();
+        $('li').unwrap('div');
+        $('li').wrap('<ul>');//每个元素的外面都会添加一个父元素容器
+        $('li').unwrap('ul');
+        $('li').wrapAll('<ul>');//为选中的所有元素的外面添加一个父元素容器
+        $('li').wrapInner('<div>');//在元素内部增加一层
+    </script>
+</body>
+
+</html>

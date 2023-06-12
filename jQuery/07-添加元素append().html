@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $('ul').append('<li>4</li>');
+        $('<li>5</li>').appendTo('ul');
+        $('ul').prepend('<li>0</li>');
+        $('<li>-1</li>').prependTo('ul');
+        console.log($('li:first-child').html());
+        $('ul li:first-child').html('jquery修改html');
+        $('ul li:nth-child(2)').text('jquery修改text');
+
+    </script>
+</body>
+
+</html>
