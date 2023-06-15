@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bootstrap 弹框</title>
   <!-- 引入bootstrap.css -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,8 +44,23 @@
   </div>
 
   <!-- 引入bootstrap.js -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+  <script src="./bootstrap.min.js"></script>
+  <script>
+    const btn = document.querySelector('.edit-btn');
+    const box = document.querySelector('.name-box');
+    const myModal = new bootstrap.Modal(box);
+    btn.addEventListener('click', function () {
+      const username = document.querySelector('.username');
+      username.value = 'pink老师';
+      myModal.show();
+    });
+    document.querySelector('.save-btn').addEventListener('click', function () {
+      const username = document.querySelector('.username').value;
+      console.log('模拟发送到服务器', username);
+      myModal.hide();
 
+    });
+  </script>
 </body>
 
 </html>
