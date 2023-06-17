@@ -17,13 +17,13 @@ function getBooklist() {
         console.log(result.data.data);
         bookList = result.data.data;
         const str_bookList = bookList.map((item, index) => {
-            const { bookname, author, publisher } = item;
+            const { bookname, author, publisher, id } = item;
             return `<tr>
               <td>${index + 1}</td>
               <td>${bookname}</td>
               <td>${author}</td>
               <td>${publisher}</td>
-              <td>
+              <td data-id= "${id}">
                 <span class="del">删除</span>
                 <span class="edit">编辑</span>
               </td>
@@ -56,4 +56,24 @@ add_btn.addEventListener('click', () => {
         getBooklist();
         addModal.hide();
     })
+});
+const list = document.querySelector('.list');
+list.addEventListener('click', function (e) {
+    // debugger
+    // console.log(e.target);
+    // console.log(e.target.classList.contains("del"));
+    if (e.target.classList.contains('del')) {
+        // console.log('点我删除');
+        // debugger
+        // const del_id = e.target.parentNode.dataset.id;
+        const theId = e.target.parentNode.dataset.id
+        // console.log(del_id);
+        axios({
+            url: `http://hmajax.itheima.net/api/books/${theId}`,
+            method: 'DELETE'
+        }).then(() => {
+            // console.log(result);
+            getBooklist();
+        });
+    }
 });
