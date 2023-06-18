@@ -30,8 +30,9 @@
         data: fd
       }).then(result => {
         // document.body.innerHTML =
+        console.log(result);
         const my_img = document.querySelector('.my-img');
-        my_img.setAttribute('src', result);
+        my_img.src = result.data.data.url;
       })
     });
   </script>
