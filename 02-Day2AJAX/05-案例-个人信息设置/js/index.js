@@ -42,3 +42,21 @@ document.querySelector('.upload').addEventListener('change', function (e) {
         document.querySelector('.prew').src = imgUrl;
     })
 });
+// 修改信息
+document.querySelector('.submit').addEventListener('click', function () {
+    const userForm = document.querySelector('.user-form');
+    const dataObj = serialize(userForm, { hash: true, empty: true });
+    dataObj.creator = creator;
+    dataObj.gender = +dataObj.gender;
+    console.log(dataObj);
+    axios({
+        url: 'http://hmajax.itheima.net/api/settings',
+        method: 'PUT',
+        data: dataObj
+    }).then(result => {
+        // 设置提示框
+        const toast = document.querySelector('.my-toast');
+        const mToast = new bootstrap.Toast(toast);
+        mToast.show();
+    })
+});
