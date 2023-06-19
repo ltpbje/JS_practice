@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest_数据提交</title>
+</head>
+
+<body>
+  <button class="reg-btn">注册用户</button>
+  <script>
+    /**
+     * 目标：使用xhr进行数据提交-完成注册功能
+    */
+    document.querySelector('.reg-btn').addEventListener('click', () => {
+      const userObj = {
+        username: 'hiheima123',
+        password: '7654321'
+      };
+      const jsonSting = JSON.stringify(userObj);
+      const xhr = new XMLHttpRequest();
+      xhr.open('post', 'http://hmajax.itheima.net/api/register');
+      xhr.setRequestHeader('Content-Type', 'application/json')
+      xhr.addEventListener('loadend', function () {
+        console.log(xhr.response);
+      });
+      xhr.send(jsonSting);
+
+    })
+  </script>
+</body>
+
+</html>
