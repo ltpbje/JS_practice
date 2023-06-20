@@ -13,6 +13,19 @@
     /**
      * 目标：使用Promise管理异步任务
     */
+    const p = new Promise((reslove, reject) => {
+      setTimeout(function () {
+        // reslove('模拟AJAX-响应成功');
+        reject(new Error('模拟AJAX-响应失败'));
+      }, 1000);
+    });
+    p.then(result => {
+      console.log(result);
+    });
+    p.catch(error => {
+      console.log(error);
+    });
+
   </script>
 </body>
 

@@ -17,8 +17,9 @@
     const p = new Promise((resolve, reject) => {
       // 2. 执行异步代码
       setTimeout(() => {
-        // resolve('模拟AJAX请求-成功结果')
+        console.log(11);
         reject(new Error('模拟AJAX请求-失败结果'))
+        resolve('模拟AJAX请求-成功结果')
       }, 2000)
     })
     console.log(p)
