@@ -17,7 +17,28 @@
      *  2. 执行XHR异步代码，获取省份列表
      *  3. 关联成功或失败函数，做后续处理
     */
-    
+    const p = new Promise((reslove, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('get', 'http://hmajax.itheima.net/api/province');
+      xhr.addEventListener('loadend', function () {
+        console.log(xhr.status);
+        if (xhr.status >= 200 && xhr.status < 300) {
+          reslove(JSON.parse(xhr.response))
+        } else {
+          reject(new Error(xhr.response));
+        }
+      });
+      xhr.send();
+    });
+    p.then(result => {
+      console.log(result);
+      console.log(result.list);
+      document.body.innerHTML = result.list.join('<br>');
+    });
+    p.catch(error => {
+      console.log(error);
+    });
+
   </script>
 </body>
 

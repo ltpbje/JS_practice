@@ -17,6 +17,31 @@
      *  3. 调用成功/失败的处理程序
      *  4. 使用myAxios函数，获取省份列表展示
     */
+    function myAxios(config) {
+      return new Promise((reslove, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(config.method || 'get', config.url);
+        xhr.addEventListener('loadend', function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            reslove(JSON.parse(xhr.response));
+          } else {
+            reject(new Error(xhr.response));
+          }
+        });
+        xhr.send();
+      });
+    }
+    myAxios({
+      url: 'http://hmajax.itheima.net/api/province1'
+    }).then(result => {
+      console.log(result);
+      document.body.innerHTML = result.list.join('<br>');
+    }).catch(error => {
+      console.log(error);
+      console.log(error.message);
+      document.body.innerHTML = error.message
+    });
+
   </script>
 </body>
 
