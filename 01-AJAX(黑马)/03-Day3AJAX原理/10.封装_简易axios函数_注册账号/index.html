@@ -35,10 +35,27 @@
             reject(new Error(xhr.response))
           }
         })
-
-        xhr.send()
+        if (config.data) {
+          const dataJson = JSON.stringify(config.data);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(dataJson);
+        } else {
+          xhr.send();
+        }
       })
     }
+    myAxios({
+      url: 'http://hmajax.itheima.net/api/register',
+      method: 'post',
+      data: {
+        username: 'itheima11013',
+        password: '7654321'
+      }
+    }).then(result => {
+      console.log(result);
+    }).catch(error => {
+      console.dir(error);
+    })
   </script>
 </body>
 
