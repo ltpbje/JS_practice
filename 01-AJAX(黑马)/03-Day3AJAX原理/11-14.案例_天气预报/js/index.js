@@ -114,8 +114,16 @@ document.querySelector('.search-city').addEventListener('input', function (e) {
     // console.log(result.data);
     const cityArr = result.data;
     const liListStr = cityArr.map(item => {
-      return `<li class="city-item">${item.name}</li>`
+      return `<li class="city-item" data-code = ${item.code}>${item.name}</li>`
     }).join('');
     document.querySelector('.search-list').innerHTML = liListStr;
   })
+});
+// 切换城市天气 search - list
+document.querySelector('.search-list').addEventListener('click', function (e) {
+  if (e.target.classList.contains('city-item')) {
+    console.log(e.target.dataset.code);
+    const cityCode = e.target.dataset.code
+    getWeather(cityCode);
+  };
 });
