@@ -23,15 +23,16 @@
       <option class="area"></option>
     </select>
   </form>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../axios.js"></script>
   <script>
     /**
      * 目标：async和await_错误捕获
     */
     async function getData() {
+      try {
         const pObj = await axios({ url: 'http://hmajax.itheima.net/api/province' })
         const pname = pObj.data.list[0]
-        const cObj = await axios({ url: 'http://hmajax.itheima.net/api/city', params: { pname } })
+        const cObj = await axios({ url: 'http://hmajax.itheima.net/api/city1', params: { pname } })
         const cname = cObj.data.list[0]
         const aObj = await axios({ url: 'http://hmajax.itheima.net/api/area', params: { pname, cname } })
         const areaName = aObj.data.list[0]
@@ -39,8 +40,12 @@
         document.querySelector('.province').innerHTML = pname
         document.querySelector('.city').innerHTML = cname
         document.querySelector('.area').innerHTML = areaName
-    }
 
+      } catch (error) {
+        console.dir(error);
+      }
+
+    };
     getData()
   </script>
 </body>
