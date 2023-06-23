@@ -22,6 +22,19 @@
      * 广州-440100
      * 深圳-440300
     */
+    const bjPromise = axios({ url: 'http://hmajax.itheima.net/api/weather', params: { city: 110100 } });
+    const shPromise = axios({ url: 'http://hmajax.itheima.net/api/weather', params: { city: 310100 } });
+    const gzPromise = axios({ url: 'http://hmajax.itheima.net/api/weather', params: { city: 440100 } });
+    const szPromise = axios({ url: 'http://hmajax.itheima.net/api/weather', params: { city: 440300 } });
+
+    const p = Promise.all([bjPromise, shPromise, gzPromise, szPromise]);
+    p.then(result => {
+      console.log(result);
+      const liStr = result.map(item => {
+        return `<li>${item.data.data.area}------------${item.data.data.weather} </li>`
+      }).join('');
+      document.querySelector('.my-ul').innerHTML = liStr;
+    })
   </script>
 </body>
 
