@@ -47,6 +47,40 @@
      *  3. 合并所有二级分类Promise对象
      *  4. 等待同时成功后，渲染页面
     */
+    const topPromise = axios({ url: "http://hmajax.itheima.net/api/category/top" });
+    topPromise.then(result => {
+      console.log(result);
+      const secPromise = result.data.data.map(item => {
+        return axios({ url: 'http://hmajax.itheima.net/api/category/sub', params: { id: item.id } })
+      })
+      console.log(secPromise);
+      const p = Promise.all(secPromise);
+      p.then(result => {
+        console.log(result);
+        const dataStr = result.map(item => {
+          const data = item.data.data;
+          const children = item.data.data.children;
+
+          return `<div class="item">
+        <h3>${data.name}</h3>
+        <ul>
+          ${children.map(item => {
+            return `<li>
+            <a href="javascript:;">
+              <img src=${item.picture}>
+              <p>${item.name}</p>
+            </a>
+          </li>`
+          }).join('')
+            }
+          
+        </ul >
+      </div >`
+        }).join('');
+        document.querySelector('.sub-list').innerHTML = dataStr;
+
+      });
+    })
   </script>
 </body>
 
