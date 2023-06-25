@@ -15,7 +15,12 @@ document.querySelector('.btn').addEventListener('click', function () {
         method: 'post',
         data
     }).then(result => {
+        console.log(result);
         myAlert(true, '登录成功');
+        localStorage.setItem('token', result.data.data.token);
+        setTimeout(function () {
+            location.href = '../content/index.html';
+        }, 1000)
     }).catch(error => {
         myAlert(false, error.response.data.message);
     })
