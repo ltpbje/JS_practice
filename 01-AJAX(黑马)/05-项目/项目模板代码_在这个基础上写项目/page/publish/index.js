@@ -3,7 +3,17 @@
  *  1.1 获取频道列表数据
  *  1.2 展示到下拉菜单中
  */
-
+async function setChannleList() {
+    const result = await axios({
+        url: "/v1_0/channels"
+    })
+    console.log(result);
+    const selStr = result.data.channels.map(item => {
+        return `<option value=${item.id}>${item.name}</option>`;
+    }).join('');
+    document.querySelector('.form-select').innerHTML = `<option value="" selected="">请选择文章频道</option>${selStr}`;
+}
+setChannleList();
 /**
  * 目标2：文章封面设置
  *  2.1 准备标签结构和样式
