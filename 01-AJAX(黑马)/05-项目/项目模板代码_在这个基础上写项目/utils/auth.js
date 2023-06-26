@@ -17,8 +17,8 @@ axios({
     url: '/v1_0/user/profile'
 
 }).then(result => {
-    console.log(result.data.data.name);
-    document.querySelector('.nick-name').innerHTML = result.data.data.name;
+    console.log(result.data.name);
+    document.querySelector('.nick-name').innerHTML = result.data.name;
 })
 /**
  * 目标3：退出登录
