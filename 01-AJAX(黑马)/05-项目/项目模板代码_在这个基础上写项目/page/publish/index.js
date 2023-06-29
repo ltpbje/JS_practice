@@ -21,7 +21,27 @@ setChannleList();
  *  2.3 单独上传图片并得到图片 URL 网址
  *  2.4 回显并切换 img 标签展示（隐藏 + 号上传标签）
  */
-
+document.querySelector('.img-file').addEventListener('change', async e => {
+    console.log(e.target.files[0]);
+    const file = e.target.files[0];
+    //  2.2 选择文件并保存在 FormData
+    const fd = new FormData();
+    fd.append('image', file);
+    // 2.3 单独上传图片并得到图片 URL 网址
+    const res = await axios({
+        url: '/v1_0/upload',
+        method: 'post',
+        data: fd
+    })
+    console.log(res.data.url);
+    document.querySelector('.rounded').src = res.data.url;
+    document.querySelector('.rounded').classList.add('show');
+    document.querySelector('.place').classList.add('hide');
+})
+// 2.4 回显并切换 img 标签展示（隐藏 + 号上传标签）
+document.querySelector('.rounded').addEventListener('click', () => {
+    document.querySelector('.img-file').click();
+})
 /**
  * 目标3：发布文章保存
  *  3.1 基于 form-serialize 插件收集表单数据对象
