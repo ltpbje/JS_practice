@@ -1,3 +1,5 @@
+// const { serialize } = require("v8");
+
 /**
  * 目标1：设置频道下拉菜单
  *  1.1 获取频道列表数据
@@ -7,7 +9,7 @@ async function setChannleList() {
     const result = await axios({
         url: "/v1_0/channels"
     })
-    console.log(result);
+    // console.log(result);
     const selStr = result.data.channels.map(item => {
         return `<option value=${item.id}>${item.name}</option>`;
     }).join('');
@@ -22,7 +24,7 @@ setChannleList();
  *  2.4 回显并切换 img 标签展示（隐藏 + 号上传标签）
  */
 document.querySelector('.img-file').addEventListener('change', async e => {
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
     const file = e.target.files[0];
     //  2.2 选择文件并保存在 FormData
     const fd = new FormData();
@@ -33,7 +35,7 @@ document.querySelector('.img-file').addEventListener('change', async e => {
         method: 'post',
         data: fd
     })
-    console.log(res.data.url);
+    // console.log(res.data.url);
     document.querySelector('.rounded').src = res.data.url;
     document.querySelector('.rounded').classList.add('show');
     document.querySelector('.place').classList.add('hide');
@@ -49,6 +51,40 @@ document.querySelector('.rounded').addEventListener('click', () => {
  *  3.3 调用 Alert 警告框反馈结果给用户
  *  3.4 重置表单并跳转到列表页
  */
+document.querySelector('.send').addEventListener('click', async function () {
+    const form = document.querySelector('.art-form');
+    const data = serialize(form, { hash: true, empty: true });
+    delete data.id;
+    data.cover = {
+        type: 1,
+        images: [document.querySelector('.rounded').src]
+    };
+    console.log(data);
+
+    try {
+        const result = await axios({
+            url: "/v1_0/mp/articles",
+            method: 'post',
+            data
+        });
+        // console.log(result);
+        // 发布完成之后清空输入内容
+        form.reset();
+        document.querySelector('.rounded ').src = '';
+        document.querySelector('.rounded ').classList.remove('show');
+        document.querySelector('.place').classList.remove('hide');
+        editor.setHtml('');
+        myAlert(true, '发布成功');
+        setTimeout(function () {
+            location.href = '../content/index.html';
+        }, 1500)
+    } catch (error) {
+        myAlert(false, error.response.data.message)
+        console.log(error.response.data.message);
+    }
+
+
+})
 
 /**
  * 目标4：编辑-回显文章
@@ -57,6 +93,21 @@ document.querySelector('.rounded').addEventListener('click', () => {
  *  4.3 修改标题和按钮文字
  *  4.4 获取文章详情数据并回显表单
  */
+const queryParams = {
+    status: '',
+    channel_id: '',
+    page: 1,
+    per_page: 2
+}
+async function setArticleList() {
+    const res = await axios({
+        url: '/v1_0/mp/articles',
+        params: queryParams
+    });
+    console.log(res);
+
+}
+setArticleList();
 
 /**
  * 目标5：编辑-保存文章

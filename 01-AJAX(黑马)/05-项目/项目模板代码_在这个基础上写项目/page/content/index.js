@@ -4,6 +4,50 @@
  *  1.2 获取文章列表数据
  *  1.3 展示到指定的标签结构中
  */
+const queryParams = {
+    status: '',
+    channel_id: '',
+    page: 1,
+    per_page: 2
+}
+async function setArticleList() {
+    const res = await axios({
+        url: '/v1_0/mp/articles',
+        params: queryParams
+    });
+    console.log(res.data.results);
+    const trStr = res.data.results.map(item => {
+        return `<tr>
+                <td>
+                  <img src=${item.type === 0 ? `https://img2.baidu.com/it/u=2640406343,1419332367&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=708&amp;h=500` : item.cover.images[0]} alt="">
+                </td>
+                <td>${item.title}</td>
+                <td>
+                  
+                ${item.status === 1 ? `<span class="badge text-bg-success">审核通过</span>` : `<span class="badge text-bg-primary">待审核</span>`}
+                  
+                </td>
+                <td>
+                  <span>${item.pubdate}</span>
+                </td>
+                <td>
+                  <span>${item.read_count}</span>
+                </td>
+                <td>
+                  <span>${item.comment_count}</span>
+                </td>
+                <td>
+                  <span>${item.like_count}</span>
+                </td>
+                <td>
+                  <i class="bi bi-pencil-square edit"></i>
+                  <i class="bi bi-trash3 del"></i>
+                </td>
+              </tr>`
+    }).join('');
+    document.querySelector('.art-list').innerHTML = trStr;
+}
+setArticleList();
 
 /**
  * 目标2：筛选文章列表
