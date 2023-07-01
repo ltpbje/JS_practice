@@ -17,6 +17,7 @@ async function setArticleList() {
   });
   // console.log(res);
   document.querySelector('.total-count').innerHTML = `共${res.data.total_count}条`;
+  console.log(res.data.results);
   const trStr = res.data.results.map(item => {
     return `<tr>
                 <td>
@@ -27,7 +28,7 @@ async function setArticleList() {
                   
                 ${item.status === 1 ? ` <span class="badge text-bg-primary"> 待审核</span> ` : ` <span class="badge text-bg-success">审核通过</span>`}
                   
-                </td >
+                </td>
                 <td>
                   <span>${item.pubdate}</span>
                 </td>
@@ -42,7 +43,7 @@ async function setArticleList() {
                 </td>
                 <td>
                   <i class="bi bi-pencil-square edit"></i>
-                  <i class="bi bi-trash3 del"></i>
+                  <i class="bi bi-trash3 del" data-id ='${item.id}'></i>
                 </td>
               </tr > `
   }).join('');
@@ -114,6 +115,19 @@ document.querySelector('.last').addEventListener('click', function () {
  *  4.4 重新获取文章列表，并覆盖展示
  *  4.5 删除最后一页的最后一条，需要自动向前翻页
  */
+document.querySelector('.art-list').addEventListener('click', async function (e) {
+  if (e.target.classList.contains('del')) {
+    // console.log(11);
+    const artId = e.target.dataset.id;
+    const res = await axios({
+      url: `/v1_0/mp/articles/${artId}`,
+      method: 'delete'
+    });
+    // console.log(res);
+    document.querySelector('.table thead')
+    setArticleList();
+  }
+});
 
 // 点击编辑时，获取文章 id，跳转到发布文章页面传递文章 id 过去
 
