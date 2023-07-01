@@ -93,21 +93,7 @@ document.querySelector('.send').addEventListener('click', async function () {
  *  4.3 修改标题和按钮文字
  *  4.4 获取文章详情数据并回显表单
  */
-const queryParams = {
-    status: '',
-    channel_id: '',
-    page: 1,
-    per_page: 2
-}
-async function setArticleList() {
-    const res = await axios({
-        url: '/v1_0/mp/articles',
-        params: queryParams
-    });
-    console.log(res);
 
-}
-setArticleList();
 
 /**
  * 目标5：编辑-保存文章
