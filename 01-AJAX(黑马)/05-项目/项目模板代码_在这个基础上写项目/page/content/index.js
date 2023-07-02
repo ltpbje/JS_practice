@@ -124,10 +124,20 @@ document.querySelector('.art-list').addEventListener('click', async function (e)
       method: 'delete'
     });
     // console.log(res);
-    document.querySelector('.table thead')
+    document.querySelector('.art-list').childNodes
     setArticleList();
   }
 });
 
 // 点击编辑时，获取文章 id，跳转到发布文章页面传递文章 id 过去
+document.querySelector('.table').addEventListener('click', e => {
+  if (e.target.classList.contains('edit')) {
+    console.log(e.target.nextElementSibling);
+    const paramsId = e.target.nextElementSibling.dataset.id;
+    console.log(paramsId);
+    const params_Id = new URLSearchParams(paramsId)
+    // 利用查询参数传递文章的 id
+    location.href = `../publish/index.html?${params_Id}`;
 
+  }
+})
