@@ -82,17 +82,34 @@ document.querySelector('.send').addEventListener('click', async function () {
         myAlert(false, error.response.data.message)
         console.log(error.response.data.message);
     }
-
-
 })
 
-/**
- * 目标4：编辑-回显文章
- *  4.1 页面跳转传参（URL 查询参数方式）
- *  4.2 发布文章页面接收参数判断（共用同一套表单）
- *  4.3 修改标题和按钮文字
- *  4.4 获取文章详情数据并回显表单
- */
+    /**
+     * 目标4：编辑-回显文章
+     *  4.1 页面跳转传参（URL 查询参数方式）
+     *  4.2 发布文章页面接收参数判断（共用同一套表单）
+     *  4.3 修改标题和按钮文字
+     *  4.4 获取文章详情数据并回显表单
+     */
+    ; (function () {
+        const paramsStr = location.search;
+        const params = new URLSearchParams(paramsStr);
+        console.log(params);
+        params.forEach(async (value, key) => {
+            console.log(value, key);
+            if (key === 'id') {
+                // 4.3 修改标题和按钮文字
+                document.querySelector('.title').innerHTML = '修改文章';
+                document.querySelector('.send').innerHTML = '修改';
+                const res = await axios({
+                    url: `/v1_0/mp/articles/${value}`,
+                });
+                console.log(res);
+
+            }
+        })
+    })()
+
 
 
 /**

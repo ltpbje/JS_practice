@@ -137,7 +137,7 @@ document.querySelector('.table').addEventListener('click', e => {
     console.log(paramsId);
     const params_Id = new URLSearchParams(paramsId)
     // 利用查询参数传递文章的 id
-    location.href = `../publish/index.html?${params_Id}`;
+    location.href = `../publish/index.html?id=${paramsId}`;
 
   }
 })
