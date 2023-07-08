@@ -5,3 +5,6 @@
  *  3. 使用软件包
  */
 // 3. 使用软件包
+const dayjs = require('dayjs');
+const nowDateStr = dayjs().format('YYYY-MM-DD');
+console.log(nowDateStr);
