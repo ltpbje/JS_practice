@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log((e=>6===e.length),(e=>11===e.length))})();
