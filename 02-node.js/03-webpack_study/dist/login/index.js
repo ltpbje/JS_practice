@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log((e=>6===e.length),(e=>11===e.length))})();
+(()=>{"use strict";document.querySelector(".btn").addEventListener("click",(e=>{const o=document.querySelector('[name="mobile"]').value,t=document.querySelector('[name="code"]').value;11!==o.length&&console.log("手机号错误"),(e=>6===e.length)(t)||console.log("验证码错误")}))})();
