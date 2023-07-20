@@ -30,6 +30,6 @@ document.querySelector('.btn').addEventListener('click', e => {
 /** 
  * 目标6：优化 - 提取css代码到单独的css文件中
  * 6.1下载mini-css-extract-plugin本地软件包
- * 6.2配置webpack, config.js让Webpack拥有该插件功能
+ * 6.2配置webpack,config.js让Webpack拥有该插件功能
  * 6.3打包后观察效果
 **/
