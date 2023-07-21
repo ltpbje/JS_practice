@@ -3,6 +3,7 @@ const { Template } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 module.exports = {
     //入口
     entry: path.join(__dirname, './src/login/index.js'),
@@ -28,6 +29,22 @@ module.exports = {
                 test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
+            {
+                test: /\.less$/i,
+                use: [
+                    // compiles Less to CSS
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'less-loader',
+                ],
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                type: 'asset',
+                generator: {
+                    filename: 'assets/[hash][ext][query]'
+                }
+            }
         ],
     },
     //优化压缩css代码

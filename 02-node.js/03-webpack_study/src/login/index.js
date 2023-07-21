@@ -33,3 +33,22 @@ document.querySelector('.btn').addEventListener('click', e => {
  * 6.2配置webpack,config.js让Webpack拥有该插件功能
  * 6.3打包后观察效果
 **/
+/**
+ * 目标8：打包1ess代码
+ * 8.1新建less代码（设置背景图）并引入到src/1ogin/index.js中
+ * 8.2下载1ess和1ess-1 pader本地软件包
+ * 8.3配置webpack.config.js让Webpack拥有功能
+ * 8.4打包后观察效果
+ */
+import './login.less'
+/**
+ * 目标9：打包资源模块（图片处理）
+ *  9.1 创建 img 标签并动态添加到页面，配置 webpack.config.js
+ *  9.2 打包后观察效果和区别
+ */
+// 9.1 创建 img 标签并动态添加到页面，配置 webpack.config.js
+// 注意：js 中引入本地图片资源要用 import 方式（如果是网络图片http地址，字符串可以直接写）
+import imgObj from './assets/logo.png';
+const theImg = document.createElement('img');
+theImg.src = imgObj;
+document.querySelector('.login-wrap').appendChild(theImg);
