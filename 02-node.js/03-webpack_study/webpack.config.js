@@ -5,6 +5,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
+    // mode 设置为 'development'
+    mode: 'development',
+    devServer: {
+        static: './dist',
+    },
     //入口
     entry: path.join(__dirname, './src/login/index.js'),
     //输出
@@ -17,10 +22,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public/login.html'),//模板文件
-            filename: path.join(__dirname, 'dist/index.html')//输出文件
+            filename: path.join(__dirname, 'dist/login/index.html')//输出文件
         }),
-        new MiniCssExtractPlugin(),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: './login/index.css'
+        }),
     ],
     // 加载器 (让webpack识别更多模块文件内容)
     module: {

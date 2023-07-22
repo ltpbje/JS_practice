@@ -52,3 +52,32 @@ import imgObj from './assets/logo.png';
 const theImg = document.createElement('img');
 theImg.src = imgObj;
 document.querySelector('.login-wrap').appendChild(theImg);
+import { myAlert } from '../utils/alert.js';
+import axios from '../utils/request.js';
+document.querySelector('.btn').addEventListener('click', e => {
+    const mobile = document.querySelector('[name="mobile"]').value;
+    const code = document.querySelector('[name="code"]').value;
+    if (!checkPhone(mobile)) {
+        myAlert(false, '手机号错误');
+        return;
+    } if (!checkCode(code)) {
+        myAlert(false, '验证码错误');
+        return;
+    }
+    else {
+        axios({
+            url: '/v1_0/authorizations',
+            method: 'post',
+            data: {
+                mobile,
+                code
+            }
+        }).then(() => {
+            myAlert(true, '登录成功');
+        }).catch(error => {
+            myAlert(false, error.response.data.message)
+            console.log(error.response.data.message);
+        });
+    }
+});
+console.log(111);
