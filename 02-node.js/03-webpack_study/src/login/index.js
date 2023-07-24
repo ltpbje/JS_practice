@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 // 1.1 准备项目源代码
 import { checkCode, checkPhone } from '../utils/check.js';
+
 // console.log(checkCode, checkPhone);
 // console.log(11);
 // 1.2 准备webpack打包的环境
@@ -81,3 +82,7 @@ document.querySelector('.btn').addEventListener('click', e => {
     }
 });
 console.log(111);
+if (process.env.NODE_ENV === 'production') {
+    console.log = function () { };
+};
+console.log('开发模式下好用,生产模式下不能用');

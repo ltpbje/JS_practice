@@ -3,12 +3,12 @@ const { Template } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-
+const webpack = require('webpack');
 module.exports = {
     // mode 设置为 'development'
     mode: 'development',
     devServer: {
-        static: './dist',
+        static: './dist/login',
     },
     //入口
     entry: path.join(__dirname, './src/login/index.js'),
@@ -27,22 +27,22 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: './login/index.css'
         }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        })
     ],
     // 加载器 (让webpack识别更多模块文件内容)
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
-            },
+                use: [process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', "css-loader"],
+            },                                                                        //style-loader 把 CSS 插入到 DOM 中。
             {
                 test: /\.less$/i,
                 use: [
                     // compiles Less to CSS
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'less-loader',
-                ],
+                    process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'less-loader',],
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/i,
@@ -62,19 +62,3 @@ module.exports = {
         ],
     },
 }
-var config = {
-    entry: './app.js',
-    //...
-};
-
-module.exports = (env, argv) => {
-    if (argv.mode === 'development') {
-        config.devtool = 'source-map';
-    }
-
-    if (argv.mode === 'production') {
-        //...
-    }
-
-    return config;
-};
