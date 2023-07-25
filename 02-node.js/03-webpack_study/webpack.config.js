@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const webpack = require('webpack');
-module.exports = {
+const config = {
     // mode 设置为 'development'
     mode: 'development',
     devServer: {
@@ -61,4 +61,14 @@ module.exports = {
             new CssMinimizerPlugin(),
         ],
     },
-}
+    // 解析(Resolve)
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, src)
+        }
+    }
+};
+if (process.env.NODE_ENV === 'development') {
+    config.devtool = 'inline-source-map'
+};
+module.exports = config;

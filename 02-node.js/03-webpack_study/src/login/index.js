@@ -55,6 +55,7 @@ theImg.src = imgObj;
 document.querySelector('.login-wrap').appendChild(theImg);
 import { myAlert } from '../utils/alert.js';
 import axios from '../utils/request.js';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 document.querySelector('.btn').addEventListener('click', e => {
     const mobile = document.querySelector('[name="mobile"]').value;
     const code = document.querySelector('[name="code"]').value;
@@ -82,7 +83,12 @@ document.querySelector('.btn').addEventListener('click', e => {
     }
 });
 console.log(111);
+// 注入环境变量
 if (process.env.NODE_ENV === 'production') {
     console.log = function () { };
 };
 console.log('开发模式下好用,生产模式下不能用');
+console.logg(11);
+<% if (HtmlWebpackPlugin.option.useCdn) {%>
+    <link href="https://cdn.bootcdn.net/ajax/libs/axios/1.3.6/axios.min.js rel= " stylesheet"> <%
+}%>
