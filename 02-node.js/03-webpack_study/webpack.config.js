@@ -22,7 +22,8 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public/login.html'),//模板文件
-            filename: path.join(__dirname, 'dist/login/index.html')//输出文件
+            filename: path.join(__dirname, 'dist/login/index.html'),//输出文件
+            useCdn: process.env.NODE_ENV === 'production'
         }),
         new MiniCssExtractPlugin({
             filename: './login/index.css'
@@ -42,16 +43,16 @@ const config = {
                 test: /\.less$/i,
                 use: [
                     // compiles Less to CSS
-                    process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'less-loader',],
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                type: 'asset',
-                generator: {
-                    filename: 'assets/[hash][ext][query]'
-                }
+                    {
+                        test: /\.(png|jpg|jpeg|gif)$/i,
+                        type: 'asset',
+                        generator: {
+                            filename: 'assets/[hash][ext][query]'
+                        }
+                    }
+                ],
             }
-        ],
+        ]
     },
     //优化压缩css代码
     optimization: {
