@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  创建Vue实例，初始化渲染
+  1. 准备容器 (Vue所管理的范围)
+  2. 引包 (开发版本包 / 生产版本包) 官网
+  3. 创建实例
+  4. 添加配置项 => 完成渲染
+-->
+  <!-- 1. 准备容器 (Vue所管理的范围) -->
+  <div id="app">
+    {{ msg }}
+    <br>
+    -------------------------------------
+    <h1 id="box1">
+      {{title}}
+    </h1>
+    <a href="#">
+      {{count}}
+    </a>
+  </div>
+
+
+  <!-- 2. 引包 (开发版本包 / 生产版本包) 官网 -->
+  <script src="./vue.js"></script>
+  <script>
+    //  3. 创建实例 
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello 传智博客',
+        title: 'Vue',
+        count: '1111'
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -11,11 +11,14 @@ const config = {
         static: './dist/login',
     },
     //入口
-    entry: path.join(__dirname, './src/login/index.js'),
+    entry: {
+        'login': path.join(__dirname, './src/login/index.js'),
+    },
+    // path.join(__dirname, './src/login/index.js'),
     //输出
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: './login/index.js',
+        filename: './[name]/index.js',
         clean: true //生成打包后内容之前，清空输出目录
     },
     //插件 (给Webpack提供更多功能)
@@ -23,10 +26,11 @@ const config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public/login.html'),//模板文件
             filename: path.join(__dirname, 'dist/login/index.html'),//输出文件
-            useCdn: process.env.NODE_ENV === 'production'
+            useCdn: process.env.NODE_ENV === 'production',
+            chunks: 'login'
         }),
         new MiniCssExtractPlugin({
-            filename: './login/index.css'
+            filename: './[name]/index.css'
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -65,7 +69,7 @@ const config = {
     // 解析(Resolve)
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, src)
+            '@': path.resolve(__dirname, 'src')
         }
     }
 };
